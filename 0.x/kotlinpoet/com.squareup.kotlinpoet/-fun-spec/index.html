@@ -32,21 +32,21 @@
 </tr>
 <tr>
 <td>
-<a href="code.html">code</a></td>
+<a href="body.html">body</a></td>
 <td>
-<code><span class="keyword">val </span><span class="identifier">code</span><span class="symbol">: </span><a href="../-code-block/index.html"><span class="identifier">CodeBlock</span></a></code></td>
-</tr>
-<tr>
-<td>
-<a href="default-value.html">defaultValue</a></td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">defaultValue</span><span class="symbol">: </span><a href="../-code-block/index.html"><span class="identifier">CodeBlock</span></a><span class="symbol">?</span></code></td>
+<code><span class="keyword">val </span><span class="identifier">body</span><span class="symbol">: </span><a href="../-code-block/index.html"><span class="identifier">CodeBlock</span></a></code></td>
 </tr>
 <tr>
 <td>
 <a href="exceptions.html">exceptions</a></td>
 <td>
 <code><span class="keyword">val </span><span class="identifier">exceptions</span><span class="symbol">: </span><span class="identifier">List</span><span class="symbol">&lt;</span><a href="../-type-name/index.html"><span class="identifier">TypeName</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<a href="is-accessor.html">isAccessor</a></td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">isAccessor</span><span class="symbol">: </span><span class="identifier">Boolean</span></code></td>
 </tr>
 <tr>
 <td>
@@ -96,12 +96,6 @@
 <td>
 <code><span class="keyword">val </span><span class="identifier">typeVariables</span><span class="symbol">: </span><span class="identifier">List</span><span class="symbol">&lt;</span><a href="../-type-variable-name/index.html"><span class="identifier">TypeVariableName</span></a><span class="symbol">&gt;</span></code></td>
 </tr>
-<tr>
-<td>
-<a href="varargs.html">varargs</a></td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">varargs</span><span class="symbol">: </span><span class="identifier">Boolean</span></code></td>
-</tr>
 </tbody>
 </table>
 <h3>Functions</h3>
@@ -150,6 +144,12 @@
 </tr>
 <tr>
 <td>
+<a href="getter-builder.html">getterBuilder</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getterBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
 <a href="overriding.html">overriding</a></td>
 <td>
 <code><span class="keyword">fun </span><span class="identifier">overriding</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$overriding(javax.lang.model.element.ExecutableElement)/method">method</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><span class="identifier">ExecutableElement</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code>
@@ -159,6 +159,12 @@
 will resolve type parameters: for example overriding <a href="#">Comparable.compareTo</a> in a type that
 implements <code>Comparable&lt;Movie&gt;</code>, the <code>T</code> parameter will be resolved to <code>Movie</code>.</p>
 </td>
+</tr>
+<tr>
+<td>
+<a href="setter-builder.html">setterBuilder</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">setterBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
 </tr>
 </tbody>
 </table>

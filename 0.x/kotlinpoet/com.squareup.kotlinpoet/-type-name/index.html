@@ -19,9 +19,9 @@ collections, or even that it accepts a single type parameter.</p>
 properly.</p>
 Referencing existing types
 <p>In an annotation processor you can get a type name instance for a type mirror by calling
-<a href="get.html">TypeName.get</a>. In reflection code, you can use <a href="get.html">TypeName.get</a>.</p>
+<a href="../javax.lang.model.type.-type-mirror/as-type-name.html">asTypeName</a>. In reflection code, you can use <a href="../javax.lang.model.type.-type-mirror/as-type-name.html">asTypeName</a>.</p>
 Defining new types
-<p>Create new reference types like <code>com.example.HelloWorld</code> with <a href="../-class-name/get.html">ClassName.get</a>. To build composite
+<p>Create new reference types like <code>com.example.HelloWorld</code> with <a href="#">ClassName.get</a>. To build composite
 types like <code>Set&lt;Long&gt;</code>, use the factory methods on <a href="../-parameterized-type-name/index.html">ParameterizedTypeName</a>, <a href="../-type-variable-name/index.html">TypeVariableName</a>,
 and <a href="../-wildcard-type-name/index.html">WildcardTypeName</a>.</p>
 <h3>Properties</h3>
@@ -95,39 +95,9 @@ and <a href="../-wildcard-type-name/index.html">WildcardTypeName</a>.</p>
 </tr>
 </tbody>
 </table>
-<h3>Companion Object Functions</h3>
-<table>
-<tbody>
-<tr>
-<td>
-<a href="array-component.html">arrayComponent</a></td>
-<td>
-<code><span class="keyword">fun </span><span class="identifier">arrayComponent</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeName.Companion$arrayComponent(com.squareup.kotlinpoet.TypeName)/type">type</span><span class="symbol">:</span>&nbsp;<span class="identifier">TypeName</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TypeName</span><span class="symbol">?</span></code>
-<p>Returns the array component of <code>type</code>, or null if <code>type</code> is not an array.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="get.html">get</a></td>
-<td>
-<code><span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeName.Companion$get(javax.lang.model.type.TypeMirror, kotlin.collections.MutableMap((javax.lang.model.element.TypeParameterElement, com.squareup.kotlinpoet.TypeVariableName)))/mirror">mirror</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/type/TypeMirror.html"><span class="identifier">TypeMirror</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.TypeName.Companion$get(javax.lang.model.type.TypeMirror, kotlin.collections.MutableMap((javax.lang.model.element.TypeParameterElement, com.squareup.kotlinpoet.TypeVariableName)))/typeVariables">typeVariables</span><span class="symbol">:</span>&nbsp;<span class="identifier">MutableMap</span><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/TypeParameterElement.html"><span class="identifier">TypeParameterElement</span></a><span class="symbol">,</span>&nbsp;<a href="../-type-variable-name/index.html"><span class="identifier">TypeVariableName</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">=</span>&nbsp;mutableMapOf()<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TypeName</span></code>
-<p>Returns a type name equivalent to <code>mirror</code>.</p>
-<code><span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeName.Companion$get(kotlin.reflect.KClass((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<span class="identifier">KClass</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TypeName</span></code><br/>
-<code><span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeName.Companion$get(java.lang.reflect.Type, kotlin.collections.MutableMap((java.lang.reflect.Type, com.squareup.kotlinpoet.TypeVariableName)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><span class="identifier">Type</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.TypeName.Companion$get(java.lang.reflect.Type, kotlin.collections.MutableMap((java.lang.reflect.Type, com.squareup.kotlinpoet.TypeVariableName)))/map">map</span><span class="symbol">:</span>&nbsp;<span class="identifier">MutableMap</span><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><span class="identifier">Type</span></a><span class="symbol">,</span>&nbsp;<a href="../-type-variable-name/index.html"><span class="identifier">TypeVariableName</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">=</span>&nbsp;mutableMapOf()<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TypeName</span></code>
-<p>Returns a type name equivalent to <code>type</code>.</p>
-</td>
-</tr>
-</tbody>
-</table>
 <h3>Inheritors</h3>
 <table>
 <tbody>
-<tr>
-<td>
-<a href="../-array-type-name/index.html">ArrayTypeName</a></td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">ArrayTypeName</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TypeName</span></code></td>
-</tr>
 <tr>
 <td>
 <a href="../-class-name/index.html">ClassName</a></td>
@@ -135,6 +105,12 @@ and <a href="../-wildcard-type-name/index.html">WildcardTypeName</a>.</p>
 <code><span class="keyword">class </span><span class="identifier">ClassName</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TypeName</span><span class="symbol">, </span><span class="identifier">Comparable</span><span class="symbol">&lt;</span><a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">&gt;</span></code>
 <p>A fully-qualified class name for top-level and member classes.</p>
 </td>
+</tr>
+<tr>
+<td>
+<a href="../-lambda-type-name/index.html">LambdaTypeName</a></td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">LambdaTypeName</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TypeName</span></code></td>
 </tr>
 <tr>
 <td>

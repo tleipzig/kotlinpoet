@@ -44,6 +44,12 @@
 </tr>
 <tr>
 <td>
+<a href="companion-object.html">companionObject</a></td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">companionObject</span><span class="symbol">: </span><span class="identifier">TypeSpec</span><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
 <a href="enum-constants.html">enumConstants</a></td>
 <td>
 <code><span class="keyword">val </span><span class="identifier">enumConstants</span><span class="symbol">: </span><span class="identifier">Map</span><span class="symbol">&lt;</span><span class="identifier">String</span><span class="symbol">,</span>&nbsp;<span class="identifier">TypeSpec</span><span class="symbol">&gt;</span></code></td>
@@ -86,12 +92,6 @@
 </tr>
 <tr>
 <td>
-<a href="originating-elements.html">originatingElements</a></td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">originatingElements</span><span class="symbol">: </span><span class="identifier">List</span><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><span class="identifier">Element</span></a><span class="symbol">&gt;</span></code></td>
-</tr>
-<tr>
-<td>
 <a href="primary-constructor.html">primaryConstructor</a></td>
 <td>
 <code><span class="keyword">val </span><span class="identifier">primaryConstructor</span><span class="symbol">: </span><a href="../-fun-spec/index.html"><span class="identifier">FunSpec</span></a><span class="symbol">?</span></code></td>
@@ -107,6 +107,12 @@
 <a href="superclass.html">superclass</a></td>
 <td>
 <code><span class="keyword">val </span><span class="identifier">superclass</span><span class="symbol">: </span><a href="../-type-name/index.html"><span class="identifier">TypeName</span></a></code></td>
+</tr>
+<tr>
+<td>
+<a href="superclass-constructor-parameters.html">superclassConstructorParameters</a></td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">superclassConstructorParameters</span><span class="symbol">: </span><span class="identifier">List</span><span class="symbol">&lt;</span><a href="../-code-block/index.html"><span class="identifier">CodeBlock</span></a><span class="symbol">&gt;</span></code></td>
 </tr>
 <tr>
 <td>
@@ -182,6 +188,12 @@
 </tr>
 <tr>
 <td>
+<a href="companion-object-builder.html">companionObjectBuilder</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">companionObjectBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
 <a href="enum-builder.html">enumBuilder</a></td>
 <td>
 <code><span class="keyword">fun </span><span class="identifier">enumBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$enumBuilder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<span class="identifier">String</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
@@ -193,6 +205,13 @@
 <td>
 <code><span class="keyword">fun </span><span class="identifier">interfaceBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$interfaceBuilder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<span class="identifier">String</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
 <code><span class="keyword">fun </span><span class="identifier">interfaceBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$interfaceBuilder(com.squareup.kotlinpoet.ClassName)/className">className</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<a href="object-builder.html">objectBuilder</a></td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">objectBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$objectBuilder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<span class="identifier">String</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">objectBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$objectBuilder(com.squareup.kotlinpoet.ClassName)/className">className</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
 </tr>
 </tbody>
 </table>
