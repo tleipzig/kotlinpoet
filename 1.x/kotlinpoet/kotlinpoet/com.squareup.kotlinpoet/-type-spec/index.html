@@ -1,0 +1,275 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TypeSpec - kotlinpoet</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kotlinpoet</a>&nbsp;/&nbsp;<a href="../index.html">com.squareup.kotlinpoet</a>&nbsp;/&nbsp;<a href="./index.html">TypeSpec</a><br/>
+<br/>
+<h1>TypeSpec</h1>
+<code><span class="keyword">class </span><span class="identifier">TypeSpec</span></code>
+<p>A generated class, interface, or enum declaration.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-builder/index.html">Builder</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Builder</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-kind/index.html">Kind</a></p>
+</td>
+<td>
+<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">Kind</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="annotation-specs.html">annotationSpecs</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">annotationSpecs</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-annotation-spec/index.html"><span class="identifier">AnnotationSpec</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="enum-constants.html">enumConstants</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">enumConstants</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="./index.html"><span class="identifier">TypeSpec</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="fun-specs.html">funSpecs</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">funSpecs</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-fun-spec/index.html"><span class="identifier">FunSpec</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="initializer-block.html">initializerBlock</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">initializerBlock</span><span class="symbol">: </span><a href="../-code-block/index.html"><span class="identifier">CodeBlock</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-annotation.html">isAnnotation</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">isAnnotation</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-anonymous-class.html">isAnonymousClass</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">isAnonymousClass</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-companion.html">isCompanion</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">isCompanion</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-enum.html">isEnum</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">isEnum</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="kdoc.html">kdoc</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">kdoc</span><span class="symbol">: </span><a href="../-code-block/index.html"><span class="identifier">CodeBlock</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="kind.html">kind</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">kind</span><span class="symbol">: </span><a href="-kind/index.html"><span class="identifier">Kind</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="modifiers.html">modifiers</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">modifiers</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><span class="identifier">Set</span></a><span class="symbol">&lt;</span><a href="../-k-modifier/index.html"><span class="identifier">KModifier</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="name.html">name</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">name</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="primary-constructor.html">primaryConstructor</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">primaryConstructor</span><span class="symbol">: </span><a href="../-fun-spec/index.html"><span class="identifier">FunSpec</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="property-specs.html">propertySpecs</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">propertySpecs</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-property-spec/index.html"><span class="identifier">PropertySpec</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="superclass.html">superclass</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">superclass</span><span class="symbol">: </span><a href="../-type-name/index.html"><span class="identifier">TypeName</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="superclass-constructor-parameters.html">superclassConstructorParameters</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">superclassConstructorParameters</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-code-block/index.html"><span class="identifier">CodeBlock</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="superinterfaces.html">superinterfaces</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">superinterfaces</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="../-type-name/index.html"><span class="identifier">TypeName</span></a><span class="symbol">,</span>&nbsp;<a href="../-code-block/index.html"><span class="identifier">CodeBlock</span></a><span class="symbol">?</span><span class="symbol">&gt;</span></code>
+<p>Map of superinterfaces - entries with a null value represent a regular superinterface (with
+no delegation), while non-null <a href="../-code-block/index.html">CodeBlock</a> values represent delegates
+for the corresponding <a href="./index.html">TypeSpec</a> interface (key) value</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="type-specs.html">typeSpecs</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">typeSpecs</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">TypeSpec</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="type-variables.html">typeVariables</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">typeVariables</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../-type-variable-name/index.html"><span class="identifier">TypeVariableName</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-builder.html">toBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="annotation-builder.html">annotationBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">annotationBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$annotationBuilder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">annotationBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$annotationBuilder(com.squareup.kotlinpoet.ClassName)/className">className</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="anonymous-class-builder.html">anonymousClassBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">anonymousClassBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="class-builder.html">classBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">classBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$classBuilder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">classBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$classBuilder(com.squareup.kotlinpoet.ClassName)/className">className</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="companion-object-builder.html">companionObjectBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">companionObjectBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$companionObjectBuilder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="enum-builder.html">enumBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">enumBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$enumBuilder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">enumBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$enumBuilder(com.squareup.kotlinpoet.ClassName)/className">className</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="expect-class-builder.html">expectClassBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">expectClassBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$expectClassBuilder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">expectClassBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$expectClassBuilder(com.squareup.kotlinpoet.ClassName)/className">className</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="interface-builder.html">interfaceBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">interfaceBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$interfaceBuilder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">interfaceBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$interfaceBuilder(com.squareup.kotlinpoet.ClassName)/className">className</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="object-builder.html">objectBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">objectBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$objectBuilder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">objectBuilder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.TypeSpec.Companion$objectBuilder(com.squareup.kotlinpoet.ClassName)/className">className</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
