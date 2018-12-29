@@ -1,0 +1,144 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileSpec.Builder - kotlinpoet</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">kotlinpoet</a>&nbsp;/&nbsp;<a href="../../index.html">com.squareup.kotlinpoet</a>&nbsp;/&nbsp;<a href="../index.html">FileSpec</a>&nbsp;/&nbsp;<a href="./index.html">Builder</a><br/>
+<br/>
+<h1>Builder</h1>
+<code><span class="keyword">class </span><span class="identifier">Builder</span></code>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="annotations.html">annotations</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">annotations</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../-annotation-spec/index.html"><span class="identifier">AnnotationSpec</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="name.html">name</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">name</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="package-name.html">packageName</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">packageName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-aliased-import.html">addAliasedImport</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">addAliasedImport</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAliasedImport(java.lang.Class((kotlin.Any)), kotlin.String)/class">class</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAliasedImport(java.lang.Class((kotlin.Any)), kotlin.String)/as">as</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addAliasedImport</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAliasedImport(kotlin.reflect.KClass((kotlin.Any)), kotlin.String)/class">class</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAliasedImport(kotlin.reflect.KClass((kotlin.Any)), kotlin.String)/as">as</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addAliasedImport</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAliasedImport(com.squareup.kotlinpoet.ClassName, kotlin.String)/className">className</span><span class="symbol">:</span>&nbsp;<a href="../../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAliasedImport(com.squareup.kotlinpoet.ClassName, kotlin.String)/as">as</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addAliasedImport</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAliasedImport(com.squareup.kotlinpoet.ClassName, kotlin.String, kotlin.String)/className">className</span><span class="symbol">:</span>&nbsp;<a href="../../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAliasedImport(com.squareup.kotlinpoet.ClassName, kotlin.String, kotlin.String)/memberName">memberName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAliasedImport(com.squareup.kotlinpoet.ClassName, kotlin.String, kotlin.String)/as">as</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="add-annotation.html">addAnnotation</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">addAnnotation</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAnnotation(com.squareup.kotlinpoet.AnnotationSpec)/annotationSpec">annotationSpec</span><span class="symbol">:</span>&nbsp;<a href="../../-annotation-spec/index.html"><span class="identifier">AnnotationSpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code>
+<p>Add an annotation to the file.</p>
+<code><span class="keyword">fun </span><span class="identifier">addAnnotation</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAnnotation(com.squareup.kotlinpoet.ClassName)/annotation">annotation</span><span class="symbol">:</span>&nbsp;<a href="../../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addAnnotation</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAnnotation(java.lang.Class((kotlin.Any)))/annotation">annotation</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addAnnotation</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addAnnotation(kotlin.reflect.KClass((kotlin.Any)))/annotation">annotation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="add-comment.html">addComment</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">addComment</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addComment(kotlin.String, kotlin.Array((kotlin.Any)))/format">format</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addComment(kotlin.String, kotlin.Array((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="add-function.html">addFunction</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">addFunction</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addFunction(com.squareup.kotlinpoet.FunSpec)/funSpec">funSpec</span><span class="symbol">:</span>&nbsp;<a href="../../-fun-spec/index.html"><span class="identifier">FunSpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="add-import.html">addImport</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">addImport</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addImport(kotlin.Enum(()))/constant">constant</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html"><span class="identifier">Enum</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addImport</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addImport(java.lang.Class((kotlin.Any)), kotlin.Array((kotlin.String)))/class">class</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addImport(java.lang.Class((kotlin.Any)), kotlin.Array((kotlin.String)))/names">names</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addImport</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addImport(kotlin.reflect.KClass((kotlin.Any)), kotlin.Array((kotlin.String)))/class">class</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addImport(kotlin.reflect.KClass((kotlin.Any)), kotlin.Array((kotlin.String)))/names">names</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addImport</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addImport(com.squareup.kotlinpoet.ClassName, kotlin.Array((kotlin.String)))/className">className</span><span class="symbol">:</span>&nbsp;<a href="../../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addImport(com.squareup.kotlinpoet.ClassName, kotlin.Array((kotlin.String)))/names">names</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addImport</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addImport(kotlin.String, kotlin.Array((kotlin.String)))/packageName">packageName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addImport(kotlin.String, kotlin.Array((kotlin.String)))/names">names</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="add-property.html">addProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">addProperty</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addProperty(com.squareup.kotlinpoet.PropertySpec)/propertySpec">propertySpec</span><span class="symbol">:</span>&nbsp;<a href="../../-property-spec/index.html"><span class="identifier">PropertySpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="add-type.html">addType</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">addType</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addType(com.squareup.kotlinpoet.TypeSpec)/typeSpec">typeSpec</span><span class="symbol">:</span>&nbsp;<a href="../../-type-spec/index.html"><span class="identifier">TypeSpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="add-type-alias.html">addTypeAlias</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">addTypeAlias</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$addTypeAlias(com.squareup.kotlinpoet.TypeAliasSpec)/typeAliasSpec">typeAliasSpec</span><span class="symbol">:</span>&nbsp;<a href="../../-type-alias-spec/index.html"><span class="identifier">TypeAliasSpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="build.html">build</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">build</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../index.html"><span class="identifier">FileSpec</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="indent.html">indent</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">indent</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Builder$indent(kotlin.String)/indent">indent</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../../com.squareup.kotlinpoet.jvm/jvm-multifile-class.html">jvmMultifileClass</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">jvmMultifileClass</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../../com.squareup.kotlinpoet.jvm/jvm-name.html">jvmName</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">jvmName</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.jvm$jvmName(com.squareup.kotlinpoet.FileSpec.Builder, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
