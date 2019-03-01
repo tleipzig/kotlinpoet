@@ -28,6 +28,9 @@ sign <code>%</code> but has its own set of permitted placeholders:</p>
 <li><code>%T</code> emits a <em>type</em> reference. Types will be imported if possible. Arguments for types may be
     <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html">classes</a>, <a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/type/TypeMirror.html">type mirrors</a>, and
     <a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html">elements</a>.</li>
+<li><code>%M</code> emits a <em>member</em> reference. A member is either a function or a property that can be
+    accessed in a static context, e.g. a top-level function or a property inside an object.
+    Members will be imported if possible. Arguments for members must be of type <a href="../-member-name/index.html">MemberName</a>.</li>
 <li><code>%%</code> emits a percent sign.</li>
 <li><code>·</code> emits a space that never wraps. KotlinPoet prefers to wrap lines longer than 100 columns.
     It does this by replacing normal spaces with a newline and indent. Note that spaces in strings

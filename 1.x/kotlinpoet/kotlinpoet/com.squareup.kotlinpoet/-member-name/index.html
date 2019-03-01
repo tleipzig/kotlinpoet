@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MemberName - kotlinpoet</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kotlinpoet</a>&nbsp;/&nbsp;<a href="../index.html">com.squareup.kotlinpoet</a>&nbsp;/&nbsp;<a href="./index.html">MemberName</a><br/>
+<br/>
+<h1>MemberName</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">MemberName</span></code>
+<p>Represents the name of a member (such as a function or a property) that can be used in a static
+context.</p>
+<h3>Parameters</h3>
+<p><a name="packageName"></a>
+<code>packageName</code> - e.g. <code>kotlin.collections</code></p>
+<p><a name="enclosingClassName"></a>
+<code>enclosingClassName</code> - e.g. <code>Map.Entry.Companion</code>, if the member is declared inside the
+companion object of the Map.Entry class</p>
+<p><a name="simpleName"></a>
+<code>simpleName</code> - e.g. <code>isBlank</code>, <code>size</code></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MemberName</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.MemberName$<init>(kotlin.String, kotlin.String)/packageName">packageName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.MemberName$<init>(kotlin.String, kotlin.String)/simpleName">simpleName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">MemberName</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.MemberName$<init>(com.squareup.kotlinpoet.ClassName, kotlin.String)/enclosingClassName">enclosingClassName</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.MemberName$<init>(com.squareup.kotlinpoet.ClassName, kotlin.String)/simpleName">simpleName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="canonical-name.html">canonicalName</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">canonicalName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Fully qualified name using <code>.</code> as a separator, like <code>kotlin.String.isBlank</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="enclosing-class-name.html">enclosingClassName</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">enclosingClassName</span><span class="symbol">: </span><a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">?</span></code>
+<p>e.g. <code>Map.Entry.Companion</code>, if the member is declared inside the
+companion object of the Map.Entry class</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="package-name.html">packageName</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">packageName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>e.g. <code>kotlin.collections</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="simple-name.html">simpleName</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">simpleName</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>e.g. <code>isBlank</code>, <code>size</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="member.html">member</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">.</span><span class="identifier">member</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.MemberName.Companion$member(com.squareup.kotlinpoet.ClassName, kotlin.String)/simpleName">simpleName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MemberName</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">member</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.MemberName.Companion$member(kotlin.reflect.KClass((kotlin.Any)), kotlin.String)/simpleName">simpleName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MemberName</span></a></code><br/>
+<code><span class="keyword">fun </span><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">member</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.MemberName.Companion$member(java.lang.Class((kotlin.Any)), kotlin.String)/simpleName">simpleName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">MemberName</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
