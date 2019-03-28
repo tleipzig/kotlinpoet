@@ -8,7 +8,7 @@
 <a href="../../../index.html">kotlinpoet</a>&nbsp;/&nbsp;<a href="../../index.html">com.squareup.kotlinpoet</a>&nbsp;/&nbsp;<a href="../index.html">FunSpec</a>&nbsp;/&nbsp;<a href="./index.html">Builder</a><br/>
 <br/>
 <h1>Builder</h1>
-<code><span class="keyword">class </span><span class="identifier">Builder</span></code>
+<code><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../-taggable/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Builder</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../../-originating-elements-holder/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Builder</span></a><span class="symbol">&gt;</span></code>
 <h3>Properties</h3>
 <table>
 <tbody>
@@ -28,10 +28,28 @@
 </tr>
 <tr>
 <td>
+<p><a href="originating-elements.html">originatingElements</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">originatingElements</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><span class="identifier">Element</span></a><span class="symbol">&gt;</span></code>
+<p>Mutable map of the current originating elements this builder contains.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="parameters.html">parameters</a></p>
 </td>
 <td>
 <code><span class="keyword">val </span><span class="identifier">parameters</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../-parameter-spec/index.html"><span class="identifier">ParameterSpec</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="tags.html">tags</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">tags</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Mutable map of the current tags this builder contains.</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -67,7 +85,7 @@
 <p><a href="add-code.html">addCode</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">addCode</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Builder$addCode(kotlin.String, kotlin.Array((kotlin.Any)))/format">format</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Builder$addCode(kotlin.String, kotlin.Array((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">addCode</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Builder$addCode(kotlin.String, kotlin.Array((kotlin.Any)))/format">format</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Builder$addCode(kotlin.String, kotlin.Array((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code><br/>
 <code><span class="keyword">fun </span><span class="identifier">addCode</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Builder$addCode(com.squareup.kotlinpoet.CodeBlock)/codeBlock">codeBlock</span><span class="symbol">:</span>&nbsp;<a href="../../-code-block/index.html"><span class="identifier">CodeBlock</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
 </tr>
 <tr>
@@ -213,6 +231,32 @@
 </tr>
 </tbody>
 </table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../-originating-elements-holder/-builder/add-originating-element.html">addOriginatingElement</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addOriginatingElement</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.OriginatingElementsHolder.Builder$addOriginatingElement(javax.lang.model.element.Element)/originatingElement">originatingElement</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><span class="identifier">Element</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../-originating-elements-holder/-builder/index.html#T"><span class="identifier">T</span></a></code>
+<p>Adds an <a href="../../-originating-elements-holder/-builder/add-originating-element.html#com.squareup.kotlinpoet.OriginatingElementsHolder.Builder$addOriginatingElement(javax.lang.model.element.Element)/originatingElement">originatingElement</a> to this type's list of originating elements.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../-taggable/-builder/tag.html">tag</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">tag</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../-taggable/-builder/index.html#T"><span class="identifier">T</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">tag</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.Taggable.Builder$tag(kotlin.reflect.KClass((kotlin.Any)), kotlin.Any)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.Taggable.Builder$tag(kotlin.reflect.KClass((kotlin.Any)), kotlin.Any)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../-taggable/-builder/index.html#T"><span class="identifier">T</span></a></code>
+<p>Attaches <a href="../../-taggable/-builder/tag.html#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/tag">tag</a> to the request using <a href="../../-taggable/-builder/tag.html#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/type">type</a> as a key. Tags can be read from a
+request using <a href="../../-taggable/tag.html">Taggable.tag</a>. Use <code>null</code> to remove any existing tag assigned for
+<a href="../../-taggable/-builder/tag.html#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/type">type</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3>Extension Functions</h3>
 <table>
 <tbody>
@@ -264,6 +308,17 @@
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">synchronized</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../tag.html">tag</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="./index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">tag</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.FunSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="../../tag.html#T"><span class="identifier">T</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Builder</span></a></code>
+<p>Attaches <a href="../../tag.html#com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.FunSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</a> to the request using <a href="../../tag.html#T">T</a> as a key. Tags can be read from a
+request using <a href="../../-taggable/tag.html">Taggable.tag</a>. Use <code>null</code> to remove any existing tag assigned for
+<a href="../../tag.html#T">T</a>.</p>
+</td>
 </tr>
 <tr>
 <td>

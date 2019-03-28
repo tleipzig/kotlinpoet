@@ -16,7 +16,7 @@
 <p><a href="-annotation-spec/index.html">AnnotationSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">AnnotationSpec</span></code>
+<code><span class="keyword">class </span><span class="identifier">AnnotationSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-taggable/index.html"><span class="identifier">Taggable</span></a></code>
 <p>A generated annotation on a declaration.</p>
 </td>
 </tr>
@@ -52,7 +52,7 @@ assumes kotlinc will check correctness later!</p>
 <p><a href="-file-spec/index.html">FileSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">FileSpec</span></code>
+<code><span class="keyword">class </span><span class="identifier">FileSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-taggable/index.html"><span class="identifier">Taggable</span></a></code>
 <p>A Kotlin file containing top level objects like classes, objects, functions, properties, and type
 aliases.</p>
 </td>
@@ -62,7 +62,7 @@ aliases.</p>
 <p><a href="-fun-spec/index.html">FunSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">FunSpec</span></code>
+<code><span class="keyword">class </span><span class="identifier">FunSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-taggable/index.html"><span class="identifier">Taggable</span></a><span class="symbol">, </span><a href="-originating-elements-holder/index.html"><span class="identifier">OriginatingElementsHolder</span></a></code>
 <p>A generated function declaration.</p>
 </td>
 </tr>
@@ -103,10 +103,19 @@ mix of user-supplied names and constants:</p>
 </tr>
 <tr>
 <td>
+<p><a href="-originating-elements-holder/index.html">OriginatingElementsHolder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">OriginatingElementsHolder</span></code>
+<p>A type that can have originating <a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html">elements</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-parameter-spec/index.html">ParameterSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">ParameterSpec</span></code>
+<code><span class="keyword">class </span><span class="identifier">ParameterSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-taggable/index.html"><span class="identifier">Taggable</span></a></code>
 <p>A generated parameter declaration.</p>
 </td>
 </tr>
@@ -122,8 +131,17 @@ mix of user-supplied names and constants:</p>
 <p><a href="-property-spec/index.html">PropertySpec</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">PropertySpec</span></code>
+<code><span class="keyword">class </span><span class="identifier">PropertySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-taggable/index.html"><span class="identifier">Taggable</span></a><span class="symbol">, </span><a href="-originating-elements-holder/index.html"><span class="identifier">OriginatingElementsHolder</span></a></code>
 <p>A generated property declaration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-taggable/index.html">Taggable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Taggable</span></code>
+<p>A type that can be tagged with extra metadata of the user's choice.</p>
 </td>
 </tr>
 <tr>
@@ -131,7 +149,7 @@ mix of user-supplied names and constants:</p>
 <p><a href="-type-alias-spec/index.html">TypeAliasSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">TypeAliasSpec</span></code>
+<code><span class="keyword">class </span><span class="identifier">TypeAliasSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-taggable/index.html"><span class="identifier">Taggable</span></a></code>
 <p>A generated typealias declaration</p>
 </td>
 </tr>
@@ -151,7 +169,7 @@ unassignable types like <code>Unit</code>.</p>
 <p><a href="-type-spec/index.html">TypeSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">TypeSpec</span></code>
+<code><span class="keyword">class </span><span class="identifier">TypeSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-taggable/index.html"><span class="identifier">Taggable</span></a><span class="symbol">, </span><a href="-originating-elements-holder/index.html"><span class="identifier">OriginatingElementsHolder</span></a></code>
 <p>A generated class, interface, or enum declaration.</p>
 </td>
 </tr>
@@ -378,6 +396,25 @@ unassignable types like <code>Unit</code>.</p>
 <code><span class="keyword">fun </span><span class="identifier">buildCodeBlock</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet$buildCodeBlock(kotlin.Function1((com.squareup.kotlinpoet.CodeBlock.Builder, kotlin.Unit)))/builderAction">builderAction</span><span class="symbol">:</span>&nbsp;<a href="-code-block/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-code-block/index.html"><span class="identifier">CodeBlock</span></a></code>
 <p>Builds new <a href="-code-block/index.html">CodeBlock</a> by populating newly created <a href="-code-block/-builder/index.html">CodeBlock.Builder</a> using provided
 <a href="build-code-block.html#com.squareup.kotlinpoet$buildCodeBlock(kotlin.Function1((com.squareup.kotlinpoet.CodeBlock.Builder, kotlin.Unit)))/builderAction">builderAction</a> and then converting it to <a href="-code-block/index.html">CodeBlock</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="tag.html">tag</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="-taggable/index.html"><span class="identifier">Taggable</span></a><span class="symbol">.</span><span class="identifier">tag</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="tag.html#T"><span class="identifier">T</span></a><span class="symbol">?</span></code>
+<p>Returns the tag attached with <a href="tag.html#T">T</a> as a key, or null if no tag is attached with that key.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="-annotation-spec/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">tag</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.AnnotationSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="tag.html#T"><span class="identifier">T</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="-annotation-spec/-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="-file-spec/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">tag</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.FileSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="tag.html#T"><span class="identifier">T</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="-file-spec/-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="-fun-spec/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">tag</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.FunSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="tag.html#T"><span class="identifier">T</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="-fun-spec/-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="-parameter-spec/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">tag</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.ParameterSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="tag.html#T"><span class="identifier">T</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="-parameter-spec/-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="-property-spec/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">tag</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.PropertySpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="tag.html#T"><span class="identifier">T</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="-property-spec/-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="-type-alias-spec/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">tag</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.TypeAliasSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="tag.html#T"><span class="identifier">T</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="-type-alias-spec/-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="-type-spec/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="identifier">tag</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.TypeSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</span><span class="symbol">:</span>&nbsp;<a href="tag.html#T"><span class="identifier">T</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="-type-spec/-builder/index.html"><span class="identifier">Builder</span></a></code>
+<p>Attaches <a href="tag.html#com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.AnnotationSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</a> to the request using <a href="tag.html#T">T</a> as a key. Tags can be read from a
+request using <a href="-taggable/tag.html">Taggable.tag</a>. Use <code>null</code> to remove any existing tag assigned for
+<a href="tag.html#T">T</a>.</p>
 </td>
 </tr>
 </tbody>
