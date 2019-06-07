@@ -40,10 +40,10 @@ return builder.build()
 <p>The above code generates unique names if presented with conflicts. Given user-supplied properties
 with names <code>ab</code> and <code>sb</code> this generates the following:</p>
 <pre><code>override fun toString(): kotlin.String {
-    val sb_ = java.lang.StringBuilder()
-    sb_.append(ab)
-    sb_.append(sb)
-    return sb_.toString()
+  val sb_ = java.lang.StringBuilder()
+  sb_.append(ab)
+  sb_.append(sb)
+  return sb_.toString()
 }
 </code></pre>
 <p>The underscore is appended to <code>sb</code> to avoid conflicting with the user-supplied <code>sb</code> property.

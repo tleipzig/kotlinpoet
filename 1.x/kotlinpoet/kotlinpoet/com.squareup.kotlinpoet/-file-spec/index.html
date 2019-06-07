@@ -26,7 +26,7 @@ aliases.</p>
 <p><a href="-builder/index.html">Builder</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-taggable/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">&lt;</span><a href="-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">&gt;</span></code></td>
+<code><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-taggable/-builder/index.html"><span class="identifier">Taggable.Builder</span></a><span class="symbol">&lt;</span><a href="-builder/index.html"><span class="identifier">FileSpec.Builder</span></a><span class="symbol">&gt;</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -92,14 +92,14 @@ aliases.</p>
 <p><a href="to-builder.html">toBuilder</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">toBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">toBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">FileSpec.Builder</span></a></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="to-java-file-object.html">toJavaFileObject</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">toJavaFileObject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/6/docs/api/javax/tools/JavaFileObject.html"><span class="identifier">JavaFileObject</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">toJavaFileObject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://docs.oracle.com/javase/6/docs/api/javax/tools/JavaFileObject.html"><span class="identifier">JavaFileObject</span></a></code></td>
 </tr>
 <tr>
 <td>
@@ -114,9 +114,9 @@ aliases.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec$writeTo(java.lang.Appendable)/out">out</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-appendable/index.html"><span class="identifier">Appendable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec$writeTo(java.nio.file.Path)/directory">directory</span><span class="symbol">:</span>&nbsp;<span class="identifier">Path</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
-<code><span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec$writeTo(java.io.File)/directory">directory</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec$writeTo(java.io.File)/directory">directory</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Writes this to <code>directory</code> as UTF-8 using the standard directory structure.</p>
-<code><span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec$writeTo(javax.annotation.processing.Filer)/filer">filer</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/Filer.html"><span class="identifier">Filer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec$writeTo(javax.annotation.processing.Filer)/filer">filer</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/Filer.html"><span class="identifier">Filer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Writes this to <code>filer</code>.</p>
 </td>
 </tr>
@@ -130,7 +130,7 @@ aliases.</p>
 <p><a href="builder.html">builder</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Companion$builder(kotlin.String, kotlin.String)/packageName">packageName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Companion$builder(kotlin.String, kotlin.String)/fileName">fileName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Companion$builder(kotlin.String, kotlin.String)/packageName">packageName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FileSpec.Companion$builder(kotlin.String, kotlin.String)/fileName">fileName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">FileSpec.Builder</span></a></code></td>
 </tr>
 <tr>
 <td>

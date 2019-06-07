@@ -18,7 +18,7 @@
 <p><a href="-builder/index.html">Builder</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-taggable/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">&lt;</span><a href="-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../-originating-elements-holder/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">&lt;</span><a href="-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">&gt;</span></code></td>
+<code><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-taggable/-builder/index.html"><span class="identifier">Taggable.Builder</span></a><span class="symbol">&lt;</span><a href="-builder/index.html"><span class="identifier">FunSpec.Builder</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../-originating-elements-holder/-builder/index.html"><span class="identifier">OriginatingElementsHolder.Builder</span></a><span class="symbol">&lt;</span><a href="-builder/index.html"><span class="identifier">FunSpec.Builder</span></a><span class="symbol">&gt;</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -154,7 +154,7 @@
 <p><a href="to-builder.html">toBuilder</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">toBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">toBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">FunSpec.Builder</span></a></code></td>
 </tr>
 <tr>
 <td>
@@ -173,30 +173,30 @@
 <p><a href="builder.html">builder</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$builder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$builder(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">FunSpec.Builder</span></a></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="constructor-builder.html">constructorBuilder</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">constructorBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">constructorBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">FunSpec.Builder</span></a></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="getter-builder.html">getterBuilder</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">getterBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">getterBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">FunSpec.Builder</span></a></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="overriding.html">overriding</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">overriding</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$overriding(javax.lang.model.element.ExecutableElement)/method">method</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><span class="identifier">ExecutableElement</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">overriding</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$overriding(javax.lang.model.element.ExecutableElement)/method">method</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><span class="identifier">ExecutableElement</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">FunSpec.Builder</span></a></code>
 <p>Returns a new fun spec builder that overrides <code>method</code>.</p>
-<code><span class="keyword">fun </span><span class="identifier">overriding</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$overriding(javax.lang.model.element.ExecutableElement, javax.lang.model.type.DeclaredType, javax.lang.model.util.Types)/method">method</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><span class="identifier">ExecutableElement</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$overriding(javax.lang.model.element.ExecutableElement, javax.lang.model.type.DeclaredType, javax.lang.model.util.Types)/enclosing">enclosing</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/type/DeclaredType.html"><span class="identifier">DeclaredType</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$overriding(javax.lang.model.element.ExecutableElement, javax.lang.model.type.DeclaredType, javax.lang.model.util.Types)/types">types</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/util/Types.html"><span class="identifier">Types</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">overriding</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$overriding(javax.lang.model.element.ExecutableElement, javax.lang.model.type.DeclaredType, javax.lang.model.util.Types)/method">method</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><span class="identifier">ExecutableElement</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$overriding(javax.lang.model.element.ExecutableElement, javax.lang.model.type.DeclaredType, javax.lang.model.util.Types)/enclosing">enclosing</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/type/DeclaredType.html"><span class="identifier">DeclaredType</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.FunSpec.Companion$overriding(javax.lang.model.element.ExecutableElement, javax.lang.model.type.DeclaredType, javax.lang.model.util.Types)/types">types</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/util/Types.html"><span class="identifier">Types</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">FunSpec.Builder</span></a></code>
 <p>Returns a new function spec builder that overrides <code>method</code> as a member of <code>enclosing</code>. This
 will resolve type parameters: for example overriding <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/compare-to.html">Comparable.compareTo</a> in a type that
 implements <code>Comparable&lt;Movie&gt;</code>, the <code>T</code> parameter will be resolved to <code>Movie</code>.</p>
@@ -207,7 +207,7 @@ implements <code>Comparable&lt;Movie&gt;</code>, the <code>T</code> parameter wi
 <p><a href="setter-builder.html">setterBuilder</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">setterBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">setterBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">FunSpec.Builder</span></a></code></td>
 </tr>
 </tbody>
 </table>

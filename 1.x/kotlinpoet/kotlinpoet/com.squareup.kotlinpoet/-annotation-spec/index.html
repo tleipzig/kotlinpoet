@@ -18,7 +18,7 @@
 <p><a href="-builder/index.html">Builder</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-taggable/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">&lt;</span><a href="-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">&gt;</span></code></td>
+<code><span class="keyword">class </span><span class="identifier">Builder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-taggable/-builder/index.html"><span class="identifier">Taggable.Builder</span></a><span class="symbol">&lt;</span><a href="-builder/index.html"><span class="identifier">AnnotationSpec.Builder</span></a><span class="symbol">&gt;</span></code></td>
 </tr>
 <tr>
 <td>
@@ -51,7 +51,7 @@
 <p><a href="use-site-target.html">useSiteTarget</a></p>
 </td>
 <td>
-<code><span class="keyword">val </span><span class="identifier">useSiteTarget</span><span class="symbol">: </span><a href="-use-site-target/index.html"><span class="identifier">UseSiteTarget</span></a><span class="symbol">?</span></code></td>
+<code><span class="keyword">val </span><span class="identifier">useSiteTarget</span><span class="symbol">: </span><a href="-use-site-target/index.html"><span class="identifier">AnnotationSpec.UseSiteTarget</span></a><span class="symbol">?</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -77,7 +77,7 @@
 <p><a href="to-builder.html">toBuilder</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">toBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">toBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">AnnotationSpec.Builder</span></a></code></td>
 </tr>
 <tr>
 <td>
@@ -96,9 +96,9 @@
 <p><a href="builder.html">builder</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.AnnotationSpec.Companion$builder(com.squareup.kotlinpoet.ClassName)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
-<code><span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.AnnotationSpec.Companion$builder(java.lang.Class((kotlin.Annotation)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code><br/>
-<code><span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.AnnotationSpec.Companion$builder(kotlin.reflect.KClass((kotlin.Annotation)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">Builder</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.AnnotationSpec.Companion$builder(com.squareup.kotlinpoet.ClassName)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">AnnotationSpec.Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.AnnotationSpec.Companion$builder(java.lang.Class((kotlin.Annotation)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">AnnotationSpec.Builder</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.AnnotationSpec.Companion$builder(kotlin.reflect.KClass((kotlin.Annotation)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="-builder/index.html"><span class="identifier">AnnotationSpec.Builder</span></a></code></td>
 </tr>
 <tr>
 <td>
@@ -106,7 +106,7 @@
 </td>
 <td>
 <code><span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.AnnotationSpec.Companion$get(kotlin.Annotation, kotlin.Boolean)/annotation">annotation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><span class="identifier">Annotation</span></a><span class="symbol">, </span><span class="identifier" id="com.squareup.kotlinpoet.AnnotationSpec.Companion$get(kotlin.Annotation, kotlin.Boolean)/includeDefaultValues">includeDefaultValues</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">AnnotationSpec</span></a></code><br/>
-<code><span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.AnnotationSpec.Companion$get(javax.lang.model.element.AnnotationMirror)/annotation">annotation</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/AnnotationMirror.html"><span class="identifier">AnnotationMirror</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">AnnotationSpec</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet.AnnotationSpec.Companion$get(javax.lang.model.element.AnnotationMirror)/annotation">annotation</span><span class="symbol">:</span>&nbsp;<a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/AnnotationMirror.html"><span class="identifier">AnnotationMirror</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">AnnotationSpec</span></a></code></td>
 </tr>
 </tbody>
 </table>
