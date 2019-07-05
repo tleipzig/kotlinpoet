@@ -1,376 +1,894 @@
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<title>com.squareup.kotlinpoet - kotlinpoet</title>
-<link rel="stylesheet" href="../../style.css">
-</HEAD>
-<BODY>
-<a href="../index.html">kotlinpoet</a>&nbsp;/&nbsp;<a href="./index.html">com.squareup.kotlinpoet</a><br/>
-<br/>
-<h2>Package com.squareup.kotlinpoet</h2>
-<h3>Types</h3>
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A Kotlin API for generating .kt source files">
+      
+      
+      
+        <meta name="author" content="Square, Inc.">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../images/icon-square.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>KotlinPoet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#00bcd4">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/app.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="cyan" data-md-color-accent="deep-purple">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#package-comsquareupkotlinpoet" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="KotlinPoet" class="md-header-nav__button md-logo">
+          
+            <img src="../../../images/icon-square.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              KotlinPoet
+            </span>
+            <span class="md-header-nav__topic">
+              
+                API
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/square/kotlinpoet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    KotlinPoet
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="KotlinPoet" class="md-nav__button md-logo">
+      
+        <img src="../../../images/icon-square.png" width="48" height="48">
+      
+    </a>
+    KotlinPoet
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/square/kotlinpoet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    KotlinPoet
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        API
+      </label>
+    
+    <a href="./" title="API" class="md-nav__link md-nav__link--active">
+      API
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package-comsquareupkotlinpoet" title="Package com.squareup.kotlinpoet" class="md-nav__link">
+    Package com.squareup.kotlinpoet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" title="Types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions-for-external-classes" title="Extensions for External Classes" class="md-nav__link">
+    Extensions for External Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" title="Properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" title="Functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://stackoverflow.com/questions/tagged/kotlinpoet?sort=active" title="Stack Overflow ⏏" class="md-nav__link">
+      Stack Overflow ⏏
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../changelog/" title="Change Log" class="md-nav__link">
+      Change Log
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#package-comsquareupkotlinpoet" title="Package com.squareup.kotlinpoet" class="md-nav__link">
+    Package com.squareup.kotlinpoet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" title="Types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions-for-external-classes" title="Extensions for External Classes" class="md-nav__link">
+    Extensions for External Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" title="Properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functions" title="Functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/square/kotlinpoet/edit/master/docs/1.x/kotlinpoet/com.squareup.kotlinpoet/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>API</h1>
+                
+                <p><a href="../">kotlinpoet</a> / <a href="./">com.squareup.kotlinpoet</a></p>
+<h2 id="package-comsquareupkotlinpoet">Package com.squareup.kotlinpoet<a class="headerlink" href="#package-comsquareupkotlinpoet" title="Permanent link">&para;</a></h2>
+<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
 <table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td>
-<p><a href="-annotation-spec/index.html">AnnotationSpec</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">AnnotationSpec</span></code>
-<p>A generated annotation on a declaration.</p>
-</td>
+<td><a href="-annotation-spec/">AnnotationSpec</a></td>
+<td><code>class AnnotationSpec :</code><a href="-taggable/"><code>Taggable</code></a><br>A generated annotation on a declaration.</td>
 </tr>
 <tr>
-<td>
-<p><a href="-class-name/index.html">ClassName</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">ClassName</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-type-name/index.html"><span class="identifier">TypeName</span></a><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a><span class="symbol">&gt;</span></code>
-<p>A fully-qualified class name for top-level and member classes.</p>
-</td>
+<td><a href="-class-name/">ClassName</a></td>
+<td><code>class ClassName :</code><a href="-type-name/"><code>TypeName</code></a><code>,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><code>Comparable</code></a><code>&lt;</code><a href="-class-name/"><code>ClassName</code></a><code>&gt;</code><br>A fully-qualified class name for top-level and member classes.</td>
 </tr>
 <tr>
-<td>
-<p><a href="-code-block/index.html">CodeBlock</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">CodeBlock</span></code>
-<p>A fragment of a .kt file, potentially containing declarations, statements, and documentation.
-Code blocks are not necessarily well-formed Kotlin code, and are not validated. This class
-assumes kotlinc will check correctness later!</p>
-</td>
+<td><a href="-code-block/">CodeBlock</a></td>
+<td><code>class CodeBlock</code><br>A fragment of a .kt file, potentially containing declarations, statements, and documentation. Code blocks are not necessarily well-formed Kotlin code, and are not validated. This class assumes kotlinc will check correctness later!</td>
 </tr>
 <tr>
-<td>
-<p><a href="-dynamic/index.html">Dynamic</a></p>
-</td>
-<td>
-<code><span class="keyword">object </span><span class="identifier">Dynamic</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-type-name/index.html"><span class="identifier">TypeName</span></a></code></td>
+<td><a href="-dynamic/">Dynamic</a></td>
+<td><code>object Dynamic :</code><a href="-type-name/"><code>TypeName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-file-spec/index.html">FileSpec</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">FileSpec</span></code>
-<p>A Kotlin file containing top level objects like classes, objects, functions, properties, and type
-aliases.</p>
-</td>
+<td><a href="-file-spec/">FileSpec</a></td>
+<td><code>class FileSpec :</code><a href="-taggable/"><code>Taggable</code></a><br>A Kotlin file containing top level objects like classes, objects, functions, properties, and type aliases.</td>
 </tr>
 <tr>
-<td>
-<p><a href="-fun-spec/index.html">FunSpec</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">FunSpec</span></code>
-<p>A generated function declaration.</p>
-</td>
+<td><a href="-fun-spec/">FunSpec</a></td>
+<td><code>class FunSpec :</code><a href="-taggable/"><code>Taggable</code></a><code>,</code><a href="-originating-elements-holder/"><code>OriginatingElementsHolder</code></a><br>A generated function declaration.</td>
 </tr>
 <tr>
-<td>
-<p><a href="-k-modifier/index.html">KModifier</a></p>
-</td>
-<td>
-<code><span class="keyword">enum</span> <span class="keyword">class </span><span class="identifier">KModifier</span></code></td>
+<td><a href="-k-modifier/">KModifier</a></td>
+<td><code>enum class KModifier</code></td>
 </tr>
 <tr>
-<td>
-<p><a href="-lambda-type-name/index.html">LambdaTypeName</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">LambdaTypeName</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-type-name/index.html"><span class="identifier">TypeName</span></a></code></td>
+<td><a href="-lambda-type-name/">LambdaTypeName</a></td>
+<td><code>class LambdaTypeName :</code><a href="-type-name/"><code>TypeName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-name-allocator/index.html">NameAllocator</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">NameAllocator</span></code>
-<p>Assigns Kotlin identifier names to avoid collisions, keywords, and invalid characters. To use,
-first create an instance and allocate all of the names that you need. Typically this is a
-mix of user-supplied names and constants:</p>
-</td>
+<td><a href="-member-name/">MemberName</a></td>
+<td><code>data class MemberName</code><br>Represents the name of a member (such as a function or a property).</td>
 </tr>
 <tr>
-<td>
-<p><a href="-parameter-spec/index.html">ParameterSpec</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">ParameterSpec</span></code>
-<p>A generated parameter declaration.</p>
-</td>
+<td><a href="-name-allocator/">NameAllocator</a></td>
+<td><code>class NameAllocator</code><br>Assigns Kotlin identifier names to avoid collisions, keywords, and invalid characters. To use, first create an instance and allocate all of the names that you need. Typically this is a mix of user-supplied names and constants:</td>
 </tr>
 <tr>
-<td>
-<p><a href="-parameterized-type-name/index.html">ParameterizedTypeName</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">ParameterizedTypeName</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-type-name/index.html"><span class="identifier">TypeName</span></a></code></td>
+<td><a href="-originating-elements-holder/">OriginatingElementsHolder</a></td>
+<td><code>interface OriginatingElementsHolder</code><br>A type that can have originating <a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html">elements</a>.</td>
 </tr>
 <tr>
-<td>
-<p><a href="-property-spec/index.html">PropertySpec</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">PropertySpec</span></code>
-<p>A generated property declaration.</p>
-</td>
+<td><a href="-parameterized-type-name/">ParameterizedTypeName</a></td>
+<td><code>class ParameterizedTypeName :</code><a href="-type-name/"><code>TypeName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-type-alias-spec/index.html">TypeAliasSpec</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">TypeAliasSpec</span></code>
-<p>A generated typealias declaration</p>
-</td>
+<td><a href="-parameter-spec/">ParameterSpec</a></td>
+<td><code>class ParameterSpec :</code><a href="-taggable/"><code>Taggable</code></a><br>A generated parameter declaration.</td>
 </tr>
 <tr>
-<td>
-<p><a href="-type-name/index.html">TypeName</a></p>
-</td>
-<td>
-<code><span class="keyword">sealed</span> <span class="keyword">class </span><span class="identifier">TypeName</span></code>
-<p>Any type in Kotlin's type system. This class identifies simple types like <code>Int</code> and <code>String</code>,
-nullable types like <code>Int?</code>, composite types like <code>Array&lt;String&gt;</code> and <code>Set&lt;String&gt;</code>, and
-unassignable types like <code>Unit</code>.</p>
-</td>
+<td><a href="-property-spec/">PropertySpec</a></td>
+<td><code>class PropertySpec :</code><a href="-taggable/"><code>Taggable</code></a><code>,</code><a href="-originating-elements-holder/"><code>OriginatingElementsHolder</code></a><br>A generated property declaration.</td>
 </tr>
 <tr>
-<td>
-<p><a href="-type-spec/index.html">TypeSpec</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">TypeSpec</span></code>
-<p>A generated class, interface, or enum declaration.</p>
-</td>
+<td><a href="-taggable/">Taggable</a></td>
+<td><code>interface Taggable</code><br>A type that can be tagged with extra metadata of the user&rsquo;s choice.</td>
 </tr>
 <tr>
-<td>
-<p><a href="-type-variable-name/index.html">TypeVariableName</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">TypeVariableName</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-type-name/index.html"><span class="identifier">TypeName</span></a></code></td>
+<td><a href="-type-alias-spec/">TypeAliasSpec</a></td>
+<td><code>class TypeAliasSpec :</code><a href="-taggable/"><code>Taggable</code></a><br>A generated typealias declaration</td>
 </tr>
 <tr>
-<td>
-<p><a href="-wildcard-type-name/index.html">WildcardTypeName</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">WildcardTypeName</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-type-name/index.html"><span class="identifier">TypeName</span></a></code></td>
+<td><a href="-type-name/">TypeName</a></td>
+<td><code>sealed class TypeName</code><br>Any type in Kotlin&rsquo;s type system. This class identifies simple types like <code>Int</code> and <code>String</code>, nullable types like <code>Int?</code>, composite types like <code>Array&lt;String&gt;</code> and <code>Set&lt;String&gt;</code>, and unassignable types like <code>Unit</code>.</td>
+</tr>
+<tr>
+<td><a href="-type-spec/">TypeSpec</a></td>
+<td><code>class TypeSpec :</code><a href="-taggable/"><code>Taggable</code></a><code>,</code><a href="-originating-elements-holder/"><code>OriginatingElementsHolder</code></a><br>A generated class, interface, or enum declaration.</td>
+</tr>
+<tr>
+<td><a href="-type-variable-name/">TypeVariableName</a></td>
+<td><code>class TypeVariableName :</code><a href="-type-name/"><code>TypeName</code></a></td>
+</tr>
+<tr>
+<td><a href="-wildcard-type-name/">WildcardTypeName</a></td>
+<td><code>class WildcardTypeName :</code><a href="-type-name/"><code>TypeName</code></a></td>
 </tr>
 </tbody>
 </table>
-<h3>Extensions for External Classes</h3>
+<h3 id="extensions-for-external-classes">Extensions for External Classes<a class="headerlink" href="#extensions-for-external-classes" title="Permanent link">&para;</a></h3>
 <table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td>
-<p><a href="java.lang.-class/index.html">java.lang.Class</a></p>
-</td>
-<td>
-</td>
+<td><a href="java.lang.-class/">java.lang.Class</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="java.lang.reflect.-parameterized-type/index.html">java.lang.reflect.ParameterizedType</a></p>
-</td>
-<td>
-</td>
+<td><a href="java.lang.reflect.-parameterized-type/">java.lang.reflect.ParameterizedType</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="java.lang.reflect.-type/index.html">java.lang.reflect.Type</a></p>
-</td>
-<td>
-</td>
+<td><a href="java.lang.reflect.-type/">java.lang.reflect.Type</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="java.lang.reflect.-wildcard-type/index.html">java.lang.reflect.WildcardType</a></p>
-</td>
-<td>
-</td>
+<td><a href="java.lang.reflect.-wildcard-type/">java.lang.reflect.WildcardType</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="javax.lang.model.element.-type-element/index.html">javax.lang.model.element.TypeElement</a></p>
-</td>
-<td>
-</td>
+<td><a href="javax.lang.model.element.-type-element/">javax.lang.model.element.TypeElement</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="javax.lang.model.element.-type-parameter-element/index.html">javax.lang.model.element.TypeParameterElement</a></p>
-</td>
-<td>
-</td>
+<td><a href="javax.lang.model.element.-type-parameter-element/">javax.lang.model.element.TypeParameterElement</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="javax.lang.model.type.-type-mirror/index.html">javax.lang.model.type.TypeMirror</a></p>
-</td>
-<td>
-</td>
+<td><a href="javax.lang.model.type.-type-mirror/">javax.lang.model.type.TypeMirror</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="javax.lang.model.type.-type-variable/index.html">javax.lang.model.type.TypeVariable</a></p>
-</td>
-<td>
-</td>
+<td><a href="javax.lang.model.type.-type-variable/">javax.lang.model.type.TypeVariable</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="javax.lang.model.type.-wildcard-type/index.html">javax.lang.model.type.WildcardType</a></p>
-</td>
-<td>
-</td>
+<td><a href="javax.lang.model.type.-wildcard-type/">javax.lang.model.type.WildcardType</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="kotlin.collections.-collection/index.html">kotlin.collections.Collection</a></p>
-</td>
-<td>
-</td>
+<td><a href="kotlin.collections.-collection/">kotlin.collections.Collection</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="kotlin.reflect.-k-class/index.html">kotlin.reflect.KClass</a></p>
-</td>
-<td>
-</td>
+<td><a href="kotlin.reflect.-k-class/">kotlin.reflect.KClass</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="kotlin.reflect.-k-type/index.html">kotlin.reflect.KType</a></p>
-</td>
-<td>
-</td>
+<td><a href="kotlin.reflect.-k-type/">kotlin.reflect.KType</a></td>
+<td></td>
 </tr>
 <tr>
-<td>
-<p><a href="kotlin.reflect.-k-type-parameter/index.html">kotlin.reflect.KTypeParameter</a></p>
-</td>
-<td>
-</td>
+<td><a href="kotlin.reflect.-k-type-parameter/">kotlin.reflect.KTypeParameter</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h3>Properties</h3>
+<h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
 <table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td>
-<p><a href="-a-n-y.html">ANY</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">ANY</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-a-n-n-o-t-a-t-i-o-n/">ANNOTATION</a></td>
+<td><code>val ANNOTATION:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-a-r-r-a-y.html">ARRAY</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">ARRAY</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-a-n-y/">ANY</a></td>
+<td><code>val ANY:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-b-o-o-l-e-a-n.html">BOOLEAN</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">BOOLEAN</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-a-r-r-a-y/">ARRAY</a></td>
+<td><code>val ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-b-y-t-e.html">BYTE</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">BYTE</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-b-o-o-l-e-a-n/">BOOLEAN</a></td>
+<td><code>val BOOLEAN:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-c-h-a-r.html">CHAR</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">CHAR</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-b-o-o-l-e-a-n_-a-r-r-a-y/">BOOLEAN_ARRAY</a></td>
+<td><code>val BOOLEAN_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-d-o-u-b-l-e.html">DOUBLE</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">DOUBLE</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-b-y-t-e/">BYTE</a></td>
+<td><code>val BYTE:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-d-y-n-a-m-i-c.html">DYNAMIC</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">DYNAMIC</span><span class="symbol">: </span><a href="-dynamic/index.html"><span class="identifier">Dynamic</span></a></code>
-<p><a href="-dynamic/index.html">Dynamic</a> is a singleton <code>object</code> type, so this is a shorthand for it in Java.</p>
-</td>
+<td><a href="-b-y-t-e_-a-r-r-a-y/">BYTE_ARRAY</a></td>
+<td><code>val BYTE_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-f-l-o-a-t.html">FLOAT</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">FLOAT</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-c-h-a-r/">CHAR</a></td>
+<td><code>val CHAR:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-i-n-t.html">INT</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">INT</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-c-h-a-r_-a-r-r-a-y/">CHAR_ARRAY</a></td>
+<td><code>val CHAR_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-l-o-n-g.html">LONG</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">LONG</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-c-h-a-r_-s-e-q-u-e-n-c-e/">CHAR_SEQUENCE</a></td>
+<td><code>val CHAR_SEQUENCE:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-s-h-o-r-t.html">SHORT</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">SHORT</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-c-o-l-l-e-c-t-i-o-n/">COLLECTION</a></td>
+<td><code>val COLLECTION:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-s-t-a-r.html">STAR</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">STAR</span><span class="symbol">: </span><a href="-wildcard-type-name/index.html"><span class="identifier">WildcardTypeName</span></a></code>
-<p>The wildcard type <code>*</code> which is shorthand for <code>out Any?</code>.</p>
-</td>
+<td><a href="-c-o-m-p-a-r-a-b-l-e/">COMPARABLE</a></td>
+<td><code>val COMPARABLE:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
-<td>
-<p><a href="-u-n-i-t.html">UNIT</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><span class="identifier">UNIT</span><span class="symbol">: </span><a href="-class-name/index.html"><span class="identifier">ClassName</span></a></code></td>
+<td><a href="-d-o-u-b-l-e/">DOUBLE</a></td>
+<td><code>val DOUBLE:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-d-o-u-b-l-e_-a-r-r-a-y/">DOUBLE_ARRAY</a></td>
+<td><code>val DOUBLE_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-d-y-n-a-m-i-c/">DYNAMIC</a></td>
+<td><code>val DYNAMIC:</code><a href="-dynamic/"><code>Dynamic</code></a><br><a href="-dynamic/">Dynamic</a> is a singleton <code>object</code> type, so this is a shorthand for it in Java.</td>
+</tr>
+<tr>
+<td><a href="-e-n-u-m/">ENUM</a></td>
+<td><code>val ENUM:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-f-l-o-a-t/">FLOAT</a></td>
+<td><code>val FLOAT:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-f-l-o-a-t_-a-r-r-a-y/">FLOAT_ARRAY</a></td>
+<td><code>val FLOAT_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-i-n-t/">INT</a></td>
+<td><code>val INT:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-i-n-t_-a-r-r-a-y/">INT_ARRAY</a></td>
+<td><code>val INT_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-i-t-e-r-a-b-l-e/">ITERABLE</a></td>
+<td><code>val ITERABLE:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-l-i-s-t/">LIST</a></td>
+<td><code>val LIST:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-l-o-n-g/">LONG</a></td>
+<td><code>val LONG:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-l-o-n-g_-a-r-r-a-y/">LONG_ARRAY</a></td>
+<td><code>val LONG_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-m-a-p/">MAP</a></td>
+<td><code>val MAP:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-m-a-p_-e-n-t-r-y/">MAP_ENTRY</a></td>
+<td><code>val MAP_ENTRY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-m-u-t-a-b-l-e_-c-o-l-l-e-c-t-i-o-n/">MUTABLE_COLLECTION</a></td>
+<td><code>val MUTABLE_COLLECTION:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-m-u-t-a-b-l-e_-i-t-e-r-a-b-l-e/">MUTABLE_ITERABLE</a></td>
+<td><code>val MUTABLE_ITERABLE:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-m-u-t-a-b-l-e_-l-i-s-t/">MUTABLE_LIST</a></td>
+<td><code>val MUTABLE_LIST:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-m-u-t-a-b-l-e_-m-a-p/">MUTABLE_MAP</a></td>
+<td><code>val MUTABLE_MAP:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-m-u-t-a-b-l-e_-m-a-p_-e-n-t-r-y/">MUTABLE_MAP_ENTRY</a></td>
+<td><code>val MUTABLE_MAP_ENTRY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-m-u-t-a-b-l-e_-s-e-t/">MUTABLE_SET</a></td>
+<td><code>val MUTABLE_SET:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-n-o-t-h-i-n-g/">NOTHING</a></td>
+<td><code>val NOTHING:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-n-u-m-b-e-r/">NUMBER</a></td>
+<td><code>val NUMBER:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-s-e-t/">SET</a></td>
+<td><code>val SET:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-s-h-o-r-t/">SHORT</a></td>
+<td><code>val SHORT:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-s-h-o-r-t_-a-r-r-a-y/">SHORT_ARRAY</a></td>
+<td><code>val SHORT_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-s-t-a-r/">STAR</a></td>
+<td><code>val STAR:</code><a href="-wildcard-type-name/"><code>WildcardTypeName</code></a><br>The wildcard type <code>*</code> which is shorthand for <code>out Any?</code>.</td>
+</tr>
+<tr>
+<td><a href="-s-t-r-i-n-g/">STRING</a></td>
+<td><code>val STRING:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-t-h-r-o-w-a-b-l-e/">THROWABLE</a></td>
+<td><code>val THROWABLE:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-u_-b-y-t-e/">U_BYTE</a></td>
+<td><code>val U_BYTE:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-u_-b-y-t-e_-a-r-r-a-y/">U_BYTE_ARRAY</a></td>
+<td><code>val U_BYTE_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-u_-i-n-t/">U_INT</a></td>
+<td><code>val U_INT:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-u_-i-n-t_-a-r-r-a-y/">U_INT_ARRAY</a></td>
+<td><code>val U_INT_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-u_-l-o-n-g/">U_LONG</a></td>
+<td><code>val U_LONG:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-u_-l-o-n-g_-a-r-r-a-y/">U_LONG_ARRAY</a></td>
+<td><code>val U_LONG_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-u_-s-h-o-r-t/">U_SHORT</a></td>
+<td><code>val U_SHORT:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-u_-s-h-o-r-t_-a-r-r-a-y/">U_SHORT_ARRAY</a></td>
+<td><code>val U_SHORT_ARRAY:</code><a href="-class-name/"><code>ClassName</code></a></td>
+</tr>
+<tr>
+<td><a href="-u-n-i-t/">UNIT</a></td>
+<td><code>val UNIT:</code><a href="-class-name/"><code>ClassName</code></a></td>
 </tr>
 </tbody>
 </table>
-<h3>Functions</h3>
+<h3 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h3>
 <table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td>
-<p><a href="build-code-block.html">buildCodeBlock</a></p>
-</td>
-<td>
-<code><span class="keyword">fun </span><span class="identifier">buildCodeBlock</span><span class="symbol">(</span><span class="identifier" id="com.squareup.kotlinpoet$buildCodeBlock(kotlin.Function1((com.squareup.kotlinpoet.CodeBlock.Builder, kotlin.Unit)))/builderAction">builderAction</span><span class="symbol">:</span>&nbsp;<a href="-code-block/-builder/index.html"><span class="identifier">Builder</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-code-block/index.html"><span class="identifier">CodeBlock</span></a></code>
-<p>Builds new <a href="-code-block/index.html">CodeBlock</a> by populating newly created <a href="-code-block/-builder/index.html">CodeBlock.Builder</a> using provided
-<a href="build-code-block.html#com.squareup.kotlinpoet$buildCodeBlock(kotlin.Function1((com.squareup.kotlinpoet.CodeBlock.Builder, kotlin.Unit)))/builderAction">builderAction</a> and then converting it to <a href="-code-block/index.html">CodeBlock</a>.</p>
-</td>
+<td><a href="build-code-block/">buildCodeBlock</a></td>
+<td><code>fun buildCodeBlock(builderAction:</code><a href="-code-block/-builder/"><code>CodeBlock.Builder</code></a><code>.() -&gt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><code>):</code><a href="-code-block/"><code>CodeBlock</code></a><br>Builds new <a href="-code-block/">CodeBlock</a> by populating newly created <a href="-code-block/-builder/">CodeBlock.Builder</a> using provided <a href="build-code-block/#com.squareup.kotlinpoet$buildCodeBlock(kotlin.Function1((com.squareup.kotlinpoet.CodeBlock.Builder, kotlin.Unit)))/builderAction">builderAction</a> and then converting it to <a href="-code-block/">CodeBlock</a>.</td>
+</tr>
+<tr>
+<td><a href="tag/">tag</a></td>
+<td><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="-taggable/"><code>Taggable</code></a><code>.tag():</code><a href="tag/#T"><code>T</code></a><code>?</code><br>Returns the tag attached with <a href="tag/#T">T</a> as a key, or null if no tag is attached with that key.<code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="-annotation-spec/-builder/"><code>AnnotationSpec.Builder</code></a><code>.tag(tag:</code><a href="tag/#T"><code>T</code></a><code>?):</code><a href="-annotation-spec/-builder/"><code>AnnotationSpec.Builder</code></a><br><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="-file-spec/-builder/"><code>FileSpec.Builder</code></a><code>.tag(tag:</code><a href="tag/#T"><code>T</code></a><code>?):</code><a href="-file-spec/-builder/"><code>FileSpec.Builder</code></a><br><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="-fun-spec/-builder/"><code>FunSpec.Builder</code></a><code>.tag(tag:</code><a href="tag/#T"><code>T</code></a><code>?):</code><a href="-fun-spec/-builder/"><code>FunSpec.Builder</code></a><br><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="-parameter-spec/-builder/"><code>ParameterSpec.Builder</code></a><code>.tag(tag:</code><a href="tag/#T"><code>T</code></a><code>?):</code><a href="-parameter-spec/-builder/"><code>ParameterSpec.Builder</code></a><br><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="-property-spec/-builder/"><code>PropertySpec.Builder</code></a><code>.tag(tag:</code><a href="tag/#T"><code>T</code></a><code>?):</code><a href="-property-spec/-builder/"><code>PropertySpec.Builder</code></a><br><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="-type-alias-spec/-builder/"><code>TypeAliasSpec.Builder</code></a><code>.tag(tag:</code><a href="tag/#T"><code>T</code></a><code>?):</code><a href="-type-alias-spec/-builder/"><code>TypeAliasSpec.Builder</code></a><br><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="-type-spec/-builder/"><code>TypeSpec.Builder</code></a><code>.tag(tag:</code><a href="tag/#T"><code>T</code></a><code>?):</code><a href="-type-spec/-builder/"><code>TypeSpec.Builder</code></a><br>Attaches <a href="tag/#com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.AnnotationSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</a> to the request using <a href="tag/#T">T</a> as a key. Tags can be read from a request using <a href="-taggable/tag/">Taggable.tag</a>. Use <code>null</code> to remove any existing tag assigned for <a href="tag/#T">T</a>.</td>
 </tr>
 </tbody>
 </table>
-</BODY>
-</HTML>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../.." title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Overview
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../../changelog/" title="Change Log" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Change Log
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2015 Square, Inc.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
