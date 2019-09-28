@@ -291,6 +291,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-140" title="Version 1.4.0" class="md-nav__link">
+    Version 1.4.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-130" title="Version 1.3.0" class="md-nav__link">
     Version 1.3.0
   </a>
@@ -439,6 +446,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-140" title="Version 1.4.0" class="md-nav__link">
+    Version 1.4.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-130" title="Version 1.3.0" class="md-nav__link">
     Version 1.3.0
   </a>
@@ -563,6 +577,39 @@
                 
                 
                 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="version-140">Version 1.4.0<a class="headerlink" href="#version-140" title="Permanent link">&para;</a></h2>
+<p><em>2019-09-24</em></p>
+<ul>
+<li>New: This release introduces the new KotlinPoet-metadata API that makes it easy to introspect 
+   Kotlin types and build KotlinPoet Specs based on that data. </li>
+</ul>
+<p>The strategy for type introspection is driven by <code>ClassInspector</code>, which is a basic interface for 
+   looking up JVM information about a given Class. This optionally is used by the 
+   <code>toTypeSpec()</code>/<code>toFileSpec()</code> APIs in <code>kotlinpoet-metadata-specs</code> artifact to inform about 
+   Classes with information that isn’t present in metadata (overrides, JVM modifiers, etc). There 
+   are two batteries-included implementations available in <code>ReflectiveClassInspector</code> 
+   (for reflection) and <code>ElementsClassInspector</code> (for the javax Elements API in annotation 
+   processing). These implementations are available through their respective 
+   <code>kotlinpoet-classinspector-*</code> artifacts. For more information refer to the 
+   <a href="kotlinpoet-metadata-specs/README.md">KotlinPoet-metadata-specs README</a>.</p>
+<p>At the time of this release the API is in experimental mode and has to be opted into via the
+   <code>KotlinPoetMetadataPreview</code> annotation.</p>
+<ul>
+<li>New: Kotlin 1.3.50.</li>
+<li>New: A new constructor to simplify creation of <code>ParameterSpec</code> instances.</li>
+<li>New: New <code>ClassName</code> constructors.</li>
+<li>New: <code>TypeName</code> and subclasses can now store tags.</li>
+<li>New: Optional parameters added to <code>toBuilder()</code> methods of most Specs.</li>
+<li>New: <code>List</code> overrides for Spec methods that accept <code>vararg</code>s.</li>
+<li>New: <code>CodeBlock.Builder.clear()</code> helper method.</li>
+<li>New: <code>FunSpec.Builder.clearBody()</code> helper method.</li>
+<li>Fix: Properly escape enum constant names.</li>
+<li>Fix: Ensure trailing newlines in KDoc and function bodies.</li>
+<li>Fix: <code>TypeVariableName</code>s with empty bounds will now default to <code>Any?</code>.</li>
+<li>Fix: Don&rsquo;t emit parens for primary constructors.</li>
+<li>Fix: <code>ClassName</code>s with empty simple names are not allowed anymore.</li>
+<li>Fix: Throw if names contain illegal characters that can&rsquo;t be escaped with backticks.</li>
+</ul>
 <h2 id="version-130">Version 1.3.0<a class="headerlink" href="#version-130" title="Permanent link">&para;</a></h2>
 <p><em>2019-05-30</em></p>
 <ul>
