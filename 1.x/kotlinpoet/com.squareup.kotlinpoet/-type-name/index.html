@@ -449,7 +449,7 @@ and <a href="../-wildcard-type-name/">WildcardTypeName</a>.</p>
 <tbody>
 <tr>
 <td><a href="copy/">copy</a></td>
-<td><code>fun copy(nullable:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><code>= this.isNullable, annotations:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../-annotation-spec/"><code>AnnotationSpec</code></a><code>&gt; = this.annotations.toList()):</code><a href="./"><code>TypeName</code></a><br><code>abstract fun copy(nullable:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><code>= this.isNullable, annotations:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../-annotation-spec/"><code>AnnotationSpec</code></a><code>&gt; = this.annotations.toList(), tags:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; = this.tagMap.tags.toMap()):</code><a href="./"><code>TypeName</code></a></td>
+<td><code>fun copy(nullable:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><code>= this.isNullable, annotations:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../-annotation-spec/"><code>AnnotationSpec</code></a><code>&gt; = this.annotations.toList()):</code><a href="./"><code>TypeName</code></a><br><code>abstract fun copy(nullable:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><code>= this.isNullable, annotations:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../-annotation-spec/"><code>AnnotationSpec</code></a><code>&gt; = this.annotations.toList(), tags:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; = this.tags):</code><a href="./"><code>TypeName</code></a></td>
 </tr>
 <tr>
 <td><a href="equals/">equals</a></td>
@@ -484,7 +484,7 @@ and <a href="../-wildcard-type-name/">WildcardTypeName</a>.</p>
 </tr>
 <tr>
 <td><a href="../tag/">tag</a></td>
-<td><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag():</code><a href="../tag/#T"><code>T</code></a><code>?</code><br>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.</td>
+<td>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.<code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag(): T?</code></td>
 </tr>
 </tbody>
 </table>
@@ -499,7 +499,7 @@ and <a href="../-wildcard-type-name/">WildcardTypeName</a>.</p>
 <tbody>
 <tr>
 <td><a href="../-class-name/">ClassName</a></td>
-<td><code>class ClassName :</code><a href="./"><code>TypeName</code></a><code>,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><code>Comparable</code></a><code>&lt;</code><a href="../-class-name/"><code>ClassName</code></a><code>&gt;</code><br>A fully-qualified class name for top-level and member classes.</td>
+<td>A fully-qualified class name for top-level and member classes.<code>class ClassName :</code><a href="./"><code>TypeName</code></a><code>,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><code>Comparable</code></a><code>&lt;</code><a href="../-class-name/"><code>ClassName</code></a><code>&gt;</code></td>
 </tr>
 <tr>
 <td><a href="../-dynamic/">Dynamic</a></td>

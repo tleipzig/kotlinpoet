@@ -364,13 +364,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#inheritors" class="md-nav__link">
-    Inheritors
-  </a>
-  
-</li>
-      
       
       
       
@@ -392,7 +385,7 @@
                 
                 <p><a href="../../../">kotlinpoet</a> / <a href="../../">com.squareup.kotlinpoet</a> / <a href="../">OriginatingElementsHolder</a> / <a href="./">Builder</a></p>
 <h1 id="builder">Builder<a class="headerlink" href="#builder" title="Permanent link">&para;</a></h1>
-<p><code>interface Builder&lt;out T :</code><a href="./"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="./#T"><code>T</code></a><code>&gt;&gt;</code></p>
+<p><code>interface Builder&lt;out T : Builder&lt;T&gt;&gt;</code></p>
 <p>The builder analogue to <a href="../">OriginatingElementsHolder</a> types.</p>
 <h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
 <table>
@@ -405,7 +398,7 @@
 <tbody>
 <tr>
 <td><a href="originating-elements/">originatingElements</a></td>
-<td><code>abstract val originatingElements:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><code>MutableList</code></a><code>&lt;</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><code>Element</code></a><code>&gt;</code><br>Mutable map of the current originating elements this builder contains.</td>
+<td>Mutable map of the current originating elements this builder contains.<code>abstract val originatingElements:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><code>MutableList</code></a><code>&lt;</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><code>Element</code></a><code>&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -420,30 +413,7 @@
 <tbody>
 <tr>
 <td><a href="add-originating-element/">addOriginatingElement</a></td>
-<td><code>open fun addOriginatingElement(originatingElement:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><code>Element</code></a><code>):</code><a href="./#T"><code>T</code></a><br>Adds an <a href="add-originating-element/#com.squareup.kotlinpoet.OriginatingElementsHolder.Builder$addOriginatingElement(javax.lang.model.element.Element)/originatingElement">originatingElement</a> to this type&rsquo;s list of originating elements.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="inheritors">Inheritors<a class="headerlink" href="#inheritors" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../../-fun-spec/-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="../../-taggable/-builder/"><code>Taggable.Builder</code></a><code>&lt;</code><a href="../../-fun-spec/-builder/"><code>FunSpec.Builder</code></a><code>&gt;,</code><a href="./"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="../../-fun-spec/-builder/"><code>FunSpec.Builder</code></a><code>&gt;</code></td>
-</tr>
-<tr>
-<td><a href="../../-property-spec/-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="../../-taggable/-builder/"><code>Taggable.Builder</code></a><code>&lt;</code><a href="../../-property-spec/-builder/"><code>PropertySpec.Builder</code></a><code>&gt;,</code><a href="./"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="../../-property-spec/-builder/"><code>PropertySpec.Builder</code></a><code>&gt;</code></td>
-</tr>
-<tr>
-<td><a href="../../-type-spec/-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="../../-taggable/-builder/"><code>Taggable.Builder</code></a><code>&lt;</code><a href="../../-type-spec/-builder/"><code>TypeSpec.Builder</code></a><code>&gt;,</code><a href="./"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="../../-type-spec/-builder/"><code>TypeSpec.Builder</code></a><code>&gt;</code></td>
+<td>Adds an <a href="add-originating-element/#com.squareup.kotlinpoet.OriginatingElementsHolder.Builder$addOriginatingElement(javax.lang.model.element.Element)/originatingElement">originatingElement</a> to this type&rsquo;s list of originating elements.<code>open fun addOriginatingElement(originatingElement:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><code>Element</code></a><code>): T</code></td>
 </tr>
 </tbody>
 </table>

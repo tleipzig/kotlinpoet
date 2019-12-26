@@ -358,22 +358,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inherited-properties" class="md-nav__link">
-    Inherited Properties
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#functions" class="md-nav__link">
     Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inherited-functions" class="md-nav__link">
-    Inherited Functions
   </a>
   
 </li>
@@ -437,30 +423,7 @@
 </tr>
 <tr>
 <td><a href="variance/">variance</a></td>
-<td><code>val variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>?</code><br>Either <a href="../-k-modifier/-i-n/">KModifier.IN</a>, <a href="../-k-modifier/-o-u-t/">KModifier.OUT</a>, or null.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="inherited-properties">Inherited Properties<a class="headerlink" href="#inherited-properties" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../-type-name/annotations/">annotations</a></td>
-<td><code>val annotations:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../-annotation-spec/"><code>AnnotationSpec</code></a><code>&gt;</code></td>
-</tr>
-<tr>
-<td><a href="../-type-name/is-annotated/">isAnnotated</a></td>
-<td><code>val isAnnotated:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></td>
-</tr>
-<tr>
-<td><a href="../-type-name/is-nullable/">isNullable</a></td>
-<td><code>val isNullable:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></td>
+<td>Either <a href="../-k-modifier/-i-n/">KModifier.IN</a>, <a href="../-k-modifier/-o-u-t/">KModifier.OUT</a>, or null.<code>val variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>?</code></td>
 </tr>
 </tbody>
 </table>
@@ -479,33 +442,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="inherited-functions">Inherited Functions<a class="headerlink" href="#inherited-functions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../-type-name/copy/">copy</a></td>
-<td><code>fun copy(nullable:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><code>= this.isNullable, annotations:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../-annotation-spec/"><code>AnnotationSpec</code></a><code>&gt; = this.annotations.toList()):</code><a href="../-type-name/"><code>TypeName</code></a></td>
-</tr>
-<tr>
-<td><a href="../-type-name/equals/">equals</a></td>
-<td><code>open fun equals(other:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>?):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></td>
-</tr>
-<tr>
-<td><a href="../-type-name/hash-code/">hashCode</a></td>
-<td><code>open fun hashCode():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></td>
-</tr>
-<tr>
-<td><a href="../-type-name/to-string/">toString</a></td>
-<td><code>open fun toString():</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></td>
-</tr>
-</tbody>
-</table>
 <h3 id="companion-object-functions">Companion Object Functions<a class="headerlink" href="#companion-object-functions" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -517,7 +453,7 @@
 <tbody>
 <tr>
 <td><a href="invoke/">invoke</a></td>
-<td><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br>Returns type variable named <code>name</code> with <code>variance</code> and without bounds.<code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg bounds:</code><a href="../-type-name/"><code>TypeName</code></a><code>, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg bounds:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg bounds:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, bounds:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../-type-name/"><code>TypeName</code></a><code>&gt;, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, bounds:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;&gt;, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, bounds:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>&gt;, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br>Returns type variable named <code>name</code> with <code>variance</code> and <code>bounds</code>.</td>
+<td>Returns type variable named <code>name</code> with <code>variance</code> and without bounds.<code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br>Returns type variable named <code>name</code> with <code>variance</code> and <code>bounds</code>.<code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg bounds:</code><a href="../-type-name/"><code>TypeName</code></a><code>, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg bounds:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg bounds:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, bounds:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../-type-name/"><code>TypeName</code></a><code>&gt;, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, bounds:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;&gt;, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a><br><code>operator fun invoke(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, bounds:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>&gt;, variance:</code><a href="../-k-modifier/"><code>KModifier</code></a><code>? = null):</code><a href="./"><code>TypeVariableName</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -540,7 +476,7 @@
 </tr>
 <tr>
 <td><a href="../tag/">tag</a></td>
-<td><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag():</code><a href="../tag/#T"><code>T</code></a><code>?</code><br>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.</td>
+<td>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.<code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag(): T?</code></td>
 </tr>
 </tbody>
 </table>

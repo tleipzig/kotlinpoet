@@ -364,20 +364,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#inherited-functions" class="md-nav__link">
-    Inherited Functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extension-functions" class="md-nav__link">
-    Extension Functions
-  </a>
-  
-</li>
-      
       
       
       
@@ -399,7 +385,7 @@
                 
                 <p><a href="../../../">kotlinpoet</a> / <a href="../../">com.squareup.kotlinpoet</a> / <a href="../">TypeSpec</a> / <a href="./">Builder</a></p>
 <h1 id="builder">Builder<a class="headerlink" href="#builder" title="Permanent link">&para;</a></h1>
-<p><code>class Builder :</code><a href="../../-taggable/-builder/"><code>Taggable.Builder</code></a><code>&lt;</code><a href="./"><code>TypeSpec.Builder</code></a><code>&gt;,</code><a href="../../-originating-elements-holder/-builder/"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="./"><code>TypeSpec.Builder</code></a><code>&gt;</code></p>
+<p><code>class Builder : Builder&lt;Builder&gt;, Builder&lt;Builder&gt;</code></p>
 <h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -422,12 +408,16 @@
 <td><code>val funSpecs:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><code>MutableList</code></a><code>&lt;</code><a href="../../-fun-spec/"><code>FunSpec</code></a><code>&gt;</code></td>
 </tr>
 <tr>
+<td><a href="initializer-index/">initializerIndex</a></td>
+<td><code>var initializerIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></td>
+</tr>
+<tr>
 <td><a href="modifiers/">modifiers</a></td>
 <td><code>val modifiers:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><code>MutableSet</code></a><code>&lt;</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>&gt;</code></td>
 </tr>
 <tr>
 <td><a href="originating-elements/">originatingElements</a></td>
-<td><code>val originatingElements:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><code>MutableList</code></a><code>&lt;</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><code>Element</code></a><code>&gt;</code><br>Mutable map of the current originating elements this builder contains.</td>
+<td>Mutable map of the current originating elements this builder contains.<code>val originatingElements:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><code>MutableList</code></a><code>&lt;</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><code>Element</code></a><code>&gt;</code></td>
 </tr>
 <tr>
 <td><a href="property-specs/">propertySpecs</a></td>
@@ -443,7 +433,7 @@
 </tr>
 <tr>
 <td><a href="tags/">tags</a></td>
-<td><code>val tags:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><code>MutableMap</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><br>Mutable map of the current tags this builder contains.</td>
+<td>Mutable map of the current tags this builder contains.<code>val tags:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><code>MutableMap</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code></td>
 </tr>
 <tr>
 <td><a href="type-specs/">typeSpecs</a></td>
@@ -466,71 +456,71 @@
 <tbody>
 <tr>
 <td><a href="add-annotation/">addAnnotation</a></td>
-<td><code>fun addAnnotation(annotationSpec:</code><a href="../../-annotation-spec/"><code>AnnotationSpec</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addAnnotation(annotation:</code><a href="../../-class-name/"><code>ClassName</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addAnnotation(annotation:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addAnnotation(annotation:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addAnnotation(annotationSpec:</code><a href="../../-annotation-spec/"><code>AnnotationSpec</code></a><code>): Builder</code><br><code>fun addAnnotation(annotation:</code><a href="../../-class-name/"><code>ClassName</code></a><code>): Builder</code><br><code>fun addAnnotation(annotation:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;): Builder</code><br><code>fun addAnnotation(annotation:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-annotations/">addAnnotations</a></td>
-<td><code>fun addAnnotations(annotationSpecs:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-annotation-spec/"><code>AnnotationSpec</code></a><code>&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addAnnotations(annotationSpecs:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-annotation-spec/"><code>AnnotationSpec</code></a><code>&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-enum-constant/">addEnumConstant</a></td>
-<td><code>fun addEnumConstant(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, typeSpec:</code><a href="../"><code>TypeSpec</code></a><code>= anonymousClassBuilder().build()):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addEnumConstant(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, typeSpec:</code><a href="../"><code>TypeSpec</code></a><code>= anonymousClassBuilder().build()): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-function/">addFunction</a></td>
-<td><code>fun addFunction(funSpec:</code><a href="../../-fun-spec/"><code>FunSpec</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addFunction(funSpec:</code><a href="../../-fun-spec/"><code>FunSpec</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-functions/">addFunctions</a></td>
-<td><code>fun addFunctions(funSpecs:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-fun-spec/"><code>FunSpec</code></a><code>&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addFunctions(funSpecs:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-fun-spec/"><code>FunSpec</code></a><code>&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-initializer-block/">addInitializerBlock</a></td>
-<td><code>fun addInitializerBlock(block:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addInitializerBlock(block:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-kdoc/">addKdoc</a></td>
-<td><code>fun addKdoc(format:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg args:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addKdoc(block:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addKdoc(format:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg args:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>): Builder</code><br><code>fun addKdoc(block:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-modifiers/">addModifiers</a></td>
-<td><code>fun addModifiers(vararg modifiers:</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addModifiers(modifiers:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addModifiers(vararg modifiers:</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>): Builder</code><br><code>fun addModifiers(modifiers:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-properties/">addProperties</a></td>
-<td><code>fun addProperties(propertySpecs:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-property-spec/"><code>PropertySpec</code></a><code>&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addProperties(propertySpecs:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-property-spec/"><code>PropertySpec</code></a><code>&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-property/">addProperty</a></td>
-<td><code>fun addProperty(propertySpec:</code><a href="../../-property-spec/"><code>PropertySpec</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="../../-type-name/"><code>TypeName</code></a><code>, vararg modifiers:</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>, vararg modifiers:</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, vararg modifiers:</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="../../-type-name/"><code>TypeName</code></a><code>, modifiers:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>, modifiers:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, modifiers:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addProperty(propertySpec:</code><a href="../../-property-spec/"><code>PropertySpec</code></a><code>): Builder</code><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="../../-type-name/"><code>TypeName</code></a><code>, vararg modifiers:</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>): Builder</code><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>, vararg modifiers:</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>): Builder</code><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, vararg modifiers:</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>): Builder</code><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="../../-type-name/"><code>TypeName</code></a><code>, modifiers:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>&gt;): Builder</code><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>, modifiers:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>&gt;): Builder</code><br><code>fun addProperty(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, modifiers:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-k-modifier/"><code>KModifier</code></a><code>&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-superclass-constructor-parameter/">addSuperclassConstructorParameter</a></td>
-<td><code>fun addSuperclassConstructorParameter(format:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg args:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addSuperclassConstructorParameter(codeBlock:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addSuperclassConstructorParameter(format:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg args:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>): Builder</code><br><code>fun addSuperclassConstructorParameter(codeBlock:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-superinterface/">addSuperinterface</a></td>
-<td><code>fun addSuperinterface(superinterface:</code><a href="../../-type-name/"><code>TypeName</code></a><code>, delegate:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>= CodeBlock.EMPTY):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addSuperinterface(superinterface:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>, delegate:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>= CodeBlock.EMPTY):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addSuperinterface(superinterface:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, delegate:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>= CodeBlock.EMPTY):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addSuperinterface(superinterface:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, constructorParameterName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun addSuperinterface(superinterface:</code><a href="../../-type-name/"><code>TypeName</code></a><code>, constructorParameter:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addSuperinterface(superinterface:</code><a href="../../-type-name/"><code>TypeName</code></a><code>, delegate:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>= CodeBlock.EMPTY): Builder</code><br><code>fun addSuperinterface(superinterface:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>, delegate:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>= CodeBlock.EMPTY): Builder</code><br><code>fun addSuperinterface(superinterface:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, delegate:</code><a href="../../-code-block/"><code>CodeBlock</code></a><code>= CodeBlock.EMPTY): Builder</code><br><code>fun addSuperinterface(superinterface:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, constructorParameterName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun addSuperinterface(superinterface:</code><a href="../../-type-name/"><code>TypeName</code></a><code>, constructorParameter:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-superinterfaces/">addSuperinterfaces</a></td>
-<td><code>fun addSuperinterfaces(superinterfaces:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-type-name/"><code>TypeName</code></a><code>&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addSuperinterfaces(superinterfaces:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-type-name/"><code>TypeName</code></a><code>&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-type/">addType</a></td>
-<td><code>fun addType(typeSpec:</code><a href="../"><code>TypeSpec</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addType(typeSpec:</code><a href="../"><code>TypeSpec</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-types/">addTypes</a></td>
-<td><code>fun addTypes(typeSpecs:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../"><code>TypeSpec</code></a><code>&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addTypes(typeSpecs:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../"><code>TypeSpec</code></a><code>&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-type-variable/">addTypeVariable</a></td>
-<td><code>fun addTypeVariable(typeVariable:</code><a href="../../-type-variable-name/"><code>TypeVariableName</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addTypeVariable(typeVariable:</code><a href="../../-type-variable-name/"><code>TypeVariableName</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-type-variables/">addTypeVariables</a></td>
-<td><code>fun addTypeVariables(typeVariables:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-type-variable-name/"><code>TypeVariableName</code></a><code>&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun addTypeVariables(typeVariables:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="../../-type-variable-name/"><code>TypeVariableName</code></a><code>&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="build/">build</a></td>
@@ -538,49 +528,11 @@
 </tr>
 <tr>
 <td><a href="primary-constructor/">primaryConstructor</a></td>
-<td><code>fun primaryConstructor(primaryConstructor:</code><a href="../../-fun-spec/"><code>FunSpec</code></a><code>?):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun primaryConstructor(primaryConstructor:</code><a href="../../-fun-spec/"><code>FunSpec</code></a><code>?): Builder</code></td>
 </tr>
 <tr>
 <td><a href="superclass/">superclass</a></td>
-<td><code>fun superclass(superclass:</code><a href="../../-type-name/"><code>TypeName</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun superclass(superclass:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>):</code><a href="./"><code>TypeSpec.Builder</code></a><br><code>fun superclass(superclass:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="inherited-functions">Inherited Functions<a class="headerlink" href="#inherited-functions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../../-originating-elements-holder/-builder/add-originating-element/">addOriginatingElement</a></td>
-<td><code>open fun addOriginatingElement(originatingElement:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><code>Element</code></a><code>):</code><a href="../../-originating-elements-holder/-builder/#T"><code>T</code></a><br>Adds an <a href="../../-originating-elements-holder/-builder/add-originating-element/#com.squareup.kotlinpoet.OriginatingElementsHolder.Builder$addOriginatingElement(javax.lang.model.element.Element)/originatingElement">originatingElement</a> to this type&rsquo;s list of originating elements.</td>
-</tr>
-<tr>
-<td><a href="../../-taggable/-builder/tag/">tag</a></td>
-<td><code>open fun tag(type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;, tag:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>?):</code><a href="../../-taggable/-builder/#T"><code>T</code></a><br><code>open fun tag(type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, tag:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>?):</code><a href="../../-taggable/-builder/#T"><code>T</code></a><br>Attaches <a href="../../-taggable/-builder/tag/#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/tag">tag</a> to the request using <a href="../../-taggable/-builder/tag/#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/type">type</a> as a key. Tags can be read from a request using <a href="../../-taggable/tag/">Taggable.tag</a>. Use <code>null</code> to remove any existing tag assigned for <a href="../../-taggable/-builder/tag/#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/type">type</a>.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="extension-functions">Extension Functions<a class="headerlink" href="#extension-functions" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../../../com.squareup.kotlinpoet.jvm/jvm-suppress-wildcards/">jvmSuppressWildcards</a></td>
-<td><code>fun</code><a href="./"><code>TypeSpec.Builder</code></a><code>.jvmSuppressWildcards(suppress:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><code>= true):</code><a href="./"><code>TypeSpec.Builder</code></a></td>
-</tr>
-<tr>
-<td><a href="../../tag/">tag</a></td>
-<td><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="./"><code>TypeSpec.Builder</code></a><code>.tag(tag:</code><a href="../../tag/#T"><code>T</code></a><code>?):</code><a href="./"><code>TypeSpec.Builder</code></a><br>Attaches <a href="../../tag/#com.squareup.kotlinpoet$tag(com.squareup.kotlinpoet.TypeSpec.Builder, com.squareup.kotlinpoet.tag.T)/tag">tag</a> to the request using <a href="../../tag/#T">T</a> as a key. Tags can be read from a request using <a href="../../-taggable/tag/">Taggable.tag</a>. Use <code>null</code> to remove any existing tag assigned for <a href="../../tag/#T">T</a>.</td>
+<td><code>fun superclass(superclass:</code><a href="../../-type-name/"><code>TypeName</code></a><code>): Builder</code><br><code>fun superclass(superclass:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Type.html"><code>Type</code></a><code>): Builder</code><br><code>fun superclass(superclass:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;): Builder</code></td>
 </tr>
 </tbody>
 </table>

@@ -358,6 +358,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#functions" class="md-nav__link">
     Functions
   </a>
@@ -412,7 +419,22 @@
 <tbody>
 <tr>
 <td><a href="-builder/">Builder</a></td>
-<td><code>interface Builder&lt;out T :</code><a href="-builder/"><code>Taggable.Builder</code></a><code>&lt;</code><a href="-builder/#T"><code>T</code></a><code>&gt;&gt;</code><br>The builder analogue to <a href="./">Taggable</a> types.</td>
+<td>The builder analogue to <a href="./">Taggable</a> types.<code>interface Builder&lt;out T : Builder&lt;T&gt;&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="tags/">tags</a></td>
+<td>Returns all tags.<code>open val tags:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -427,7 +449,7 @@
 <tbody>
 <tr>
 <td><a href="tag/">tag</a></td>
-<td><code>open fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; tag(type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;</code><a href="tag/#T"><code>T</code></a><code>&gt;):</code><a href="tag/#T"><code>T</code></a><code>?</code><br><code>abstract fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; tag(type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;</code><a href="tag/#T"><code>T</code></a><code>&gt;):</code><a href="tag/#T"><code>T</code></a><code>?</code><br>Returns the tag attached with <a href="tag/#com.squareup.kotlinpoet.Taggable$tag(java.lang.Class((com.squareup.kotlinpoet.Taggable.tag.T)))/type">type</a> as a key, or null if no tag is attached with that key.</td>
+<td>Returns the tag attached with <a href="tag/#com.squareup.kotlinpoet.Taggable$tag(java.lang.Class((com.squareup.kotlinpoet.Taggable.tag.T)))/type">type</a> as a key, or null if no tag is attached with that key.<code>open fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; tag(type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;T&gt;): T?</code><br><code>abstract fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; tag(type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;T&gt;): T?</code></td>
 </tr>
 </tbody>
 </table>
@@ -442,7 +464,7 @@
 <tbody>
 <tr>
 <td><a href="../tag/">tag</a></td>
-<td><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="./"><code>Taggable</code></a><code>.tag():</code><a href="../tag/#T"><code>T</code></a><code>?</code><br>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.</td>
+<td>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.<code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="./"><code>Taggable</code></a><code>.tag(): T?</code></td>
 </tr>
 </tbody>
 </table>
@@ -457,35 +479,35 @@
 <tbody>
 <tr>
 <td><a href="../-annotation-spec/">AnnotationSpec</a></td>
-<td><code>class AnnotationSpec :</code><a href="./"><code>Taggable</code></a><br>A generated annotation on a declaration.</td>
+<td>A generated annotation on a declaration.<code>class AnnotationSpec :</code><a href="./"><code>Taggable</code></a></td>
 </tr>
 <tr>
 <td><a href="../-file-spec/">FileSpec</a></td>
-<td><code>class FileSpec :</code><a href="./"><code>Taggable</code></a><br>A Kotlin file containing top level objects like classes, objects, functions, properties, and type aliases.</td>
+<td>A Kotlin file containing top level objects like classes, objects, functions, properties, and type aliases.<code>class FileSpec :</code><a href="./"><code>Taggable</code></a></td>
 </tr>
 <tr>
 <td><a href="../-fun-spec/">FunSpec</a></td>
-<td><code>class FunSpec :</code><a href="./"><code>Taggable</code></a><code>,</code><a href="../-originating-elements-holder/"><code>OriginatingElementsHolder</code></a><br>A generated function declaration.</td>
+<td>A generated function declaration.<code>class FunSpec :</code><a href="./"><code>Taggable</code></a><code>,</code><a href="../-originating-elements-holder/"><code>OriginatingElementsHolder</code></a></td>
 </tr>
 <tr>
 <td><a href="../-parameter-spec/">ParameterSpec</a></td>
-<td><code>class ParameterSpec :</code><a href="./"><code>Taggable</code></a><br>A generated parameter declaration.</td>
+<td>A generated parameter declaration.<code>class ParameterSpec :</code><a href="./"><code>Taggable</code></a></td>
 </tr>
 <tr>
 <td><a href="../-property-spec/">PropertySpec</a></td>
-<td><code>class PropertySpec :</code><a href="./"><code>Taggable</code></a><code>,</code><a href="../-originating-elements-holder/"><code>OriginatingElementsHolder</code></a><br>A generated property declaration.</td>
+<td>A generated property declaration.<code>class PropertySpec :</code><a href="./"><code>Taggable</code></a><code>,</code><a href="../-originating-elements-holder/"><code>OriginatingElementsHolder</code></a></td>
 </tr>
 <tr>
 <td><a href="../-type-alias-spec/">TypeAliasSpec</a></td>
-<td><code>class TypeAliasSpec :</code><a href="./"><code>Taggable</code></a><br>A generated typealias declaration</td>
+<td>A generated typealias declaration<code>class TypeAliasSpec :</code><a href="./"><code>Taggable</code></a></td>
 </tr>
 <tr>
 <td><a href="../-type-name/">TypeName</a></td>
-<td><code>sealed class TypeName :</code><a href="./"><code>Taggable</code></a><br>Any type in Kotlin&rsquo;s type system. This class identifies simple types like <code>Int</code> and <code>String</code>, nullable types like <code>Int?</code>, composite types like <code>Array&lt;String&gt;</code> and <code>Set&lt;String&gt;</code>, and unassignable types like <code>Unit</code>.</td>
+<td>Any type in Kotlin&rsquo;s type system. This class identifies simple types like <code>Int</code> and <code>String</code>, nullable types like <code>Int?</code>, composite types like <code>Array&lt;String&gt;</code> and <code>Set&lt;String&gt;</code>, and unassignable types like <code>Unit</code>.<code>sealed class TypeName :</code><a href="./"><code>Taggable</code></a></td>
 </tr>
 <tr>
 <td><a href="../-type-spec/">TypeSpec</a></td>
-<td><code>class TypeSpec :</code><a href="./"><code>Taggable</code></a><code>,</code><a href="../-originating-elements-holder/"><code>OriginatingElementsHolder</code></a><br>A generated class, interface, or enum declaration.</td>
+<td>A generated class, interface, or enum declaration.<code>class TypeSpec :</code><a href="./"><code>Taggable</code></a><code>,</code><a href="../-originating-elements-holder/"><code>OriginatingElementsHolder</code></a></td>
 </tr>
 </tbody>
 </table>

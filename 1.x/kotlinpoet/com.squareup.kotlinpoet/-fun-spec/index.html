@@ -419,7 +419,7 @@
 <tbody>
 <tr>
 <td><a href="-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="../-taggable/-builder/"><code>Taggable.Builder</code></a><code>&lt;</code><a href="-builder/"><code>FunSpec.Builder</code></a><code>&gt;,</code><a href="../-originating-elements-holder/-builder/"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="-builder/"><code>FunSpec.Builder</code></a><code>&gt;</code></td>
+<td><code>class Builder : Builder&lt;Builder&gt;, Builder&lt;Builder&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -513,7 +513,7 @@
 </tr>
 <tr>
 <td><a href="to-builder/">toBuilder</a></td>
-<td><code>fun toBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>= this.name):</code><a href="-builder/"><code>FunSpec.Builder</code></a></td>
+<td><code>fun toBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>= this.name): Builder</code></td>
 </tr>
 <tr>
 <td><a href="to-string/">toString</a></td>
@@ -532,23 +532,23 @@
 <tbody>
 <tr>
 <td><a href="builder/">builder</a></td>
-<td><code>fun builder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="-builder/"><code>FunSpec.Builder</code></a></td>
+<td><code>fun builder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="constructor-builder/">constructorBuilder</a></td>
-<td><code>fun constructorBuilder():</code><a href="-builder/"><code>FunSpec.Builder</code></a></td>
+<td><code>fun constructorBuilder(): Builder</code></td>
 </tr>
 <tr>
 <td><a href="getter-builder/">getterBuilder</a></td>
-<td><code>fun getterBuilder():</code><a href="-builder/"><code>FunSpec.Builder</code></a></td>
+<td><code>fun getterBuilder(): Builder</code></td>
 </tr>
 <tr>
 <td><a href="overriding/">overriding</a></td>
-<td><code>fun overriding(method:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><code>ExecutableElement</code></a><code>):</code><a href="-builder/"><code>FunSpec.Builder</code></a><br>Returns a new fun spec builder that overrides <code>method</code>.<code>fun overriding(method:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><code>ExecutableElement</code></a><code>, enclosing:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/type/DeclaredType.html"><code>DeclaredType</code></a><code>, types:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/util/Types.html"><code>Types</code></a><code>):</code><a href="-builder/"><code>FunSpec.Builder</code></a><br>Returns a new function spec builder that overrides <code>method</code> as a member of <code>enclosing</code>. This will resolve type parameters: for example overriding <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/compare-to.html">Comparable.compareTo</a> in a type that implements <code>Comparable&lt;Movie&gt;</code>, the <code>T</code> parameter will be resolved to <code>Movie</code>.</td>
+<td>Returns a new fun spec builder that overrides <code>method</code>.<code>fun overriding(method:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><code>ExecutableElement</code></a><code>): Builder</code><br>Returns a new function spec builder that overrides <code>method</code> as a member of <code>enclosing</code>. This will resolve type parameters: for example overriding <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/compare-to.html">Comparable.compareTo</a> in a type that implements <code>Comparable&lt;Movie&gt;</code>, the <code>T</code> parameter will be resolved to <code>Movie</code>.<code>fun overriding(method:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><code>ExecutableElement</code></a><code>, enclosing:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/type/DeclaredType.html"><code>DeclaredType</code></a><code>, types:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/util/Types.html"><code>Types</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="setter-builder/">setterBuilder</a></td>
-<td><code>fun setterBuilder():</code><a href="-builder/"><code>FunSpec.Builder</code></a></td>
+<td><code>fun setterBuilder(): Builder</code></td>
 </tr>
 </tbody>
 </table>
@@ -563,7 +563,7 @@
 <tbody>
 <tr>
 <td><a href="../tag/">tag</a></td>
-<td><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag():</code><a href="../tag/#T"><code>T</code></a><code>?</code><br>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.</td>
+<td>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.<code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag(): T?</code></td>
 </tr>
 </tbody>
 </table>

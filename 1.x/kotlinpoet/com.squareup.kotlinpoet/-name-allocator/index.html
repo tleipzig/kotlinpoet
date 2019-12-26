@@ -458,15 +458,15 @@ scope.</p>
 <tbody>
 <tr>
 <td><a href="copy/">copy</a></td>
-<td><code>fun copy():</code><a href="./"><code>NameAllocator</code></a><br>Create a deep copy of this NameAllocator. Useful to create multiple independent refinements of a NameAllocator to be used in the respective definition of multiples, independently-scoped, inner code blocks.</td>
+<td>Create a deep copy of this NameAllocator. Useful to create multiple independent refinements of a NameAllocator to be used in the respective definition of multiples, independently-scoped, inner code blocks.<code>fun copy():</code><a href="./"><code>NameAllocator</code></a></td>
 </tr>
 <tr>
 <td><a href="get/">get</a></td>
-<td><code>operator fun get(tag:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Retrieve a name created with <a href="new-name/">NameAllocator.newName</a>.</td>
+<td>Retrieve a name created with <a href="new-name/">NameAllocator.newName</a>.<code>operator fun get(tag:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></td>
 </tr>
 <tr>
 <td><a href="new-name/">newName</a></td>
-<td><code>fun newName(suggestion:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, tag:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>= UUID.randomUUID().toString()):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Return a new name using <code>suggestion</code> that will not be a Java identifier or clash with other names. The returned value can be queried multiple times by passing <code>tag</code> to <a href="get/">NameAllocator.get</a>.</td>
+<td>Return a new name using <code>suggestion</code> that will not be a Java identifier or clash with other names. The returned value can be queried multiple times by passing <code>tag</code> to <a href="get/">NameAllocator.get</a>.<code>fun newName(suggestion:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, tag:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>= UUID.randomUUID().toString()):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a></td>
 </tr>
 </tbody>
 </table>

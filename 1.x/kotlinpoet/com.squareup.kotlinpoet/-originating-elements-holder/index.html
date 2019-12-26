@@ -405,7 +405,7 @@
 <tbody>
 <tr>
 <td><a href="-builder/">Builder</a></td>
-<td><code>interface Builder&lt;out T :</code><a href="-builder/"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="-builder/#T"><code>T</code></a><code>&gt;&gt;</code><br>The builder analogue to <a href="./">OriginatingElementsHolder</a> types.</td>
+<td>The builder analogue to <a href="./">OriginatingElementsHolder</a> types.<code>interface Builder&lt;out T : Builder&lt;T&gt;&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -420,7 +420,7 @@
 <tbody>
 <tr>
 <td><a href="originating-elements/">originatingElements</a></td>
-<td><code>abstract val originatingElements:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><code>Element</code></a><code>&gt;</code><br>The originating elements of this type.</td>
+<td>The originating elements of this type.<code>abstract val originatingElements:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/Element.html"><code>Element</code></a><code>&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -435,15 +435,15 @@
 <tbody>
 <tr>
 <td><a href="../-fun-spec/">FunSpec</a></td>
-<td><code>class FunSpec :</code><a href="../-taggable/"><code>Taggable</code></a><code>,</code><a href="./"><code>OriginatingElementsHolder</code></a><br>A generated function declaration.</td>
+<td>A generated function declaration.<code>class FunSpec :</code><a href="../-taggable/"><code>Taggable</code></a><code>,</code><a href="./"><code>OriginatingElementsHolder</code></a></td>
 </tr>
 <tr>
 <td><a href="../-property-spec/">PropertySpec</a></td>
-<td><code>class PropertySpec :</code><a href="../-taggable/"><code>Taggable</code></a><code>,</code><a href="./"><code>OriginatingElementsHolder</code></a><br>A generated property declaration.</td>
+<td>A generated property declaration.<code>class PropertySpec :</code><a href="../-taggable/"><code>Taggable</code></a><code>,</code><a href="./"><code>OriginatingElementsHolder</code></a></td>
 </tr>
 <tr>
 <td><a href="../-type-spec/">TypeSpec</a></td>
-<td><code>class TypeSpec :</code><a href="../-taggable/"><code>Taggable</code></a><code>,</code><a href="./"><code>OriginatingElementsHolder</code></a><br>A generated class, interface, or enum declaration.</td>
+<td>A generated class, interface, or enum declaration.<code>class TypeSpec :</code><a href="../-taggable/"><code>Taggable</code></a><code>,</code><a href="./"><code>OriginatingElementsHolder</code></a></td>
 </tr>
 </tbody>
 </table>

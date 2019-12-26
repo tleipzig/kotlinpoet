@@ -362,11 +362,11 @@
                 
                 <p><a href="../../../">kotlinpoet</a> / <a href="../../">com.squareup.kotlinpoet</a> / <a href="../">FunSpec</a> / <a href="./">overriding</a></p>
 <h1 id="overriding">overriding<a class="headerlink" href="#overriding" title="Permanent link">&para;</a></h1>
-<p><code>@JvmStatic fun overriding(method:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><code>ExecutableElement</code></a><code>):</code><a href="../-builder/"><code>FunSpec.Builder</code></a></p>
+<p><code>@JvmStatic fun overriding(method:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><code>ExecutableElement</code></a><code>): Builder</code></p>
 <p>Returns a new fun spec builder that overrides <code>method</code>.</p>
 <p>This will copy its visibility modifiers, type parameters, return type, name, parameters, and
 throws declarations. An <code>override</code> modifier will be added.</p>
-<p><code>@JvmStatic fun overriding(method:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><code>ExecutableElement</code></a><code>, enclosing:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/type/DeclaredType.html"><code>DeclaredType</code></a><code>, types:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/util/Types.html"><code>Types</code></a><code>):</code><a href="../-builder/"><code>FunSpec.Builder</code></a></p>
+<p><code>@JvmStatic fun overriding(method:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/ExecutableElement.html"><code>ExecutableElement</code></a><code>, enclosing:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/type/DeclaredType.html"><code>DeclaredType</code></a><code>, types:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/util/Types.html"><code>Types</code></a><code>): Builder</code></p>
 <p>Returns a new function spec builder that overrides <code>method</code> as a member of <code>enclosing</code>. This
 will resolve type parameters: for example overriding <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/compare-to.html">Comparable.compareTo</a> in a type that
 implements <code>Comparable&lt;Movie&gt;</code>, the <code>T</code> parameter will be resolved to <code>Movie</code>.</p>

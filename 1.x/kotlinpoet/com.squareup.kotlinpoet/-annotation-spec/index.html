@@ -419,7 +419,7 @@
 <tbody>
 <tr>
 <td><a href="-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="../-taggable/-builder/"><code>Taggable.Builder</code></a><code>&lt;</code><a href="-builder/"><code>AnnotationSpec.Builder</code></a><code>&gt;</code></td>
+<td><code>class Builder : Builder&lt;Builder&gt;</code></td>
 </tr>
 <tr>
 <td><a href="-use-site-target/">UseSiteTarget</a></td>
@@ -446,7 +446,7 @@
 </tr>
 <tr>
 <td><a href="use-site-target/">useSiteTarget</a></td>
-<td><code>val useSiteTarget:</code><a href="-use-site-target/"><code>AnnotationSpec.UseSiteTarget</code></a><code>?</code></td>
+<td><code>val useSiteTarget: UseSiteTarget?</code></td>
 </tr>
 </tbody>
 </table>
@@ -469,7 +469,7 @@
 </tr>
 <tr>
 <td><a href="to-builder/">toBuilder</a></td>
-<td><code>fun toBuilder():</code><a href="-builder/"><code>AnnotationSpec.Builder</code></a></td>
+<td><code>fun toBuilder(): Builder</code></td>
 </tr>
 <tr>
 <td><a href="to-string/">toString</a></td>
@@ -488,7 +488,7 @@
 <tbody>
 <tr>
 <td><a href="builder/">builder</a></td>
-<td><code>fun builder(type:</code><a href="../-class-name/"><code>ClassName</code></a><code>):</code><a href="-builder/"><code>AnnotationSpec.Builder</code></a><br><code>fun builder(type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;out</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><code>Annotation</code></a><code>&gt;):</code><a href="-builder/"><code>AnnotationSpec.Builder</code></a><br><code>fun builder(type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><code>Annotation</code></a><code>&gt;):</code><a href="-builder/"><code>AnnotationSpec.Builder</code></a></td>
+<td><code>fun builder(type:</code><a href="../-class-name/"><code>ClassName</code></a><code>): Builder</code><br><code>fun builder(type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;out</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><code>Annotation</code></a><code>&gt;): Builder</code><br><code>fun builder(type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><code>Annotation</code></a><code>&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="get/">get</a></td>
@@ -507,7 +507,7 @@
 <tbody>
 <tr>
 <td><a href="../tag/">tag</a></td>
-<td><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag():</code><a href="../tag/#T"><code>T</code></a><code>?</code><br>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.</td>
+<td>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.<code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag(): T?</code></td>
 </tr>
 </tbody>
 </table>

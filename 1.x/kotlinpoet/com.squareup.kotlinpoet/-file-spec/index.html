@@ -428,7 +428,7 @@ aliases.</p>
 <tbody>
 <tr>
 <td><a href="-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="../-taggable/-builder/"><code>Taggable.Builder</code></a><code>&lt;</code><a href="-builder/"><code>FileSpec.Builder</code></a><code>&gt;</code></td>
+<td><code>class Builder : Builder&lt;Builder&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -482,7 +482,7 @@ aliases.</p>
 </tr>
 <tr>
 <td><a href="to-builder/">toBuilder</a></td>
-<td><code>fun toBuilder(packageName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>= this.packageName, name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>= this.name):</code><a href="-builder/"><code>FileSpec.Builder</code></a></td>
+<td><code>fun toBuilder(packageName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>= this.packageName, name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>= this.name): Builder</code></td>
 </tr>
 <tr>
 <td><a href="to-java-file-object/">toJavaFileObject</a></td>
@@ -494,7 +494,7 @@ aliases.</p>
 </tr>
 <tr>
 <td><a href="write-to/">writeTo</a></td>
-<td><code>fun writeTo(out:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-appendable/index.html"><code>Appendable</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><code>fun writeTo(directory: Path):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br><code>fun writeTo(directory:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><code>File</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Writes this to <code>directory</code> as UTF-8 using the standard directory structure.<code>fun writeTo(filer:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/Filer.html"><code>Filer</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Writes this to <code>filer</code>.</td>
+<td><code>fun writeTo(out:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-appendable/index.html"><code>Appendable</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Writes this to <code>directory</code> as UTF-8 using the standard directory structure.<code>fun writeTo(directory: Path):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br><code>fun writeTo(directory:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/io/File.html"><code>File</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a><br>Writes this to <code>filer</code>.<code>fun writeTo(filer:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/annotation/processing/Filer.html"><code>Filer</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><code>Unit</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -509,7 +509,7 @@ aliases.</p>
 <tbody>
 <tr>
 <td><a href="builder/">builder</a></td>
-<td><code>fun builder(packageName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, fileName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="-builder/"><code>FileSpec.Builder</code></a></td>
+<td><code>fun builder(packageName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, fileName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="get/">get</a></td>
@@ -528,7 +528,7 @@ aliases.</p>
 <tbody>
 <tr>
 <td><a href="../tag/">tag</a></td>
-<td><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag():</code><a href="../tag/#T"><code>T</code></a><code>?</code><br>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.</td>
+<td>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.<code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag(): T?</code></td>
 </tr>
 </tbody>
 </table>

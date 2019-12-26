@@ -364,13 +364,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#inheritors" class="md-nav__link">
-    Inheritors
-  </a>
-  
-</li>
-      
       
       
       
@@ -392,7 +385,7 @@
                 
                 <p><a href="../../../">kotlinpoet</a> / <a href="../../">com.squareup.kotlinpoet</a> / <a href="../">Taggable</a> / <a href="./">Builder</a></p>
 <h1 id="builder">Builder<a class="headerlink" href="#builder" title="Permanent link">&para;</a></h1>
-<p><code>interface Builder&lt;out T :</code><a href="./"><code>Taggable.Builder</code></a><code>&lt;</code><a href="./#T"><code>T</code></a><code>&gt;&gt;</code></p>
+<p><code>interface Builder&lt;out T : Builder&lt;T&gt;&gt;</code></p>
 <p>The builder analogue to <a href="../">Taggable</a> types.</p>
 <h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
 <table>
@@ -405,7 +398,7 @@
 <tbody>
 <tr>
 <td><a href="tags/">tags</a></td>
-<td><code>abstract val tags:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><code>MutableMap</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><br>Mutable map of the current tags this builder contains.</td>
+<td>Mutable map of the current tags this builder contains.<code>abstract val tags:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><code>MutableMap</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -420,46 +413,7 @@
 <tbody>
 <tr>
 <td><a href="tag/">tag</a></td>
-<td><code>open fun tag(type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;, tag:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>?):</code><a href="./#T"><code>T</code></a><br><code>open fun tag(type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, tag:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>?):</code><a href="./#T"><code>T</code></a><br>Attaches <a href="tag/#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/tag">tag</a> to the request using <a href="tag/#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/type">type</a> as a key. Tags can be read from a request using <a href="../tag/">Taggable.tag</a>. Use <code>null</code> to remove any existing tag assigned for <a href="tag/#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/type">type</a>.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="inheritors">Inheritors<a class="headerlink" href="#inheritors" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../../-annotation-spec/-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="./"><code>Taggable.Builder</code></a><code>&lt;</code><a href="../../-annotation-spec/-builder/"><code>AnnotationSpec.Builder</code></a><code>&gt;</code></td>
-</tr>
-<tr>
-<td><a href="../../-file-spec/-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="./"><code>Taggable.Builder</code></a><code>&lt;</code><a href="../../-file-spec/-builder/"><code>FileSpec.Builder</code></a><code>&gt;</code></td>
-</tr>
-<tr>
-<td><a href="../../-fun-spec/-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="./"><code>Taggable.Builder</code></a><code>&lt;</code><a href="../../-fun-spec/-builder/"><code>FunSpec.Builder</code></a><code>&gt;,</code><a href="../../-originating-elements-holder/-builder/"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="../../-fun-spec/-builder/"><code>FunSpec.Builder</code></a><code>&gt;</code></td>
-</tr>
-<tr>
-<td><a href="../../-parameter-spec/-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="./"><code>Taggable.Builder</code></a><code>&lt;</code><a href="../../-parameter-spec/-builder/"><code>ParameterSpec.Builder</code></a><code>&gt;</code></td>
-</tr>
-<tr>
-<td><a href="../../-property-spec/-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="./"><code>Taggable.Builder</code></a><code>&lt;</code><a href="../../-property-spec/-builder/"><code>PropertySpec.Builder</code></a><code>&gt;,</code><a href="../../-originating-elements-holder/-builder/"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="../../-property-spec/-builder/"><code>PropertySpec.Builder</code></a><code>&gt;</code></td>
-</tr>
-<tr>
-<td><a href="../../-type-alias-spec/-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="./"><code>Taggable.Builder</code></a><code>&lt;</code><a href="../../-type-alias-spec/-builder/"><code>TypeAliasSpec.Builder</code></a><code>&gt;</code></td>
-</tr>
-<tr>
-<td><a href="../../-type-spec/-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="./"><code>Taggable.Builder</code></a><code>&lt;</code><a href="../../-type-spec/-builder/"><code>TypeSpec.Builder</code></a><code>&gt;,</code><a href="../../-originating-elements-holder/-builder/"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="../../-type-spec/-builder/"><code>TypeSpec.Builder</code></a><code>&gt;</code></td>
+<td>Attaches <a href="tag/#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/tag">tag</a> to the request using <a href="tag/#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/type">type</a> as a key. Tags can be read from a request using <a href="../tag/">Taggable.tag</a>. Use <code>null</code> to remove any existing tag assigned for <a href="tag/#com.squareup.kotlinpoet.Taggable.Builder$tag(java.lang.Class((kotlin.Any)), kotlin.Any)/type">type</a>.<code>open fun tag(type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;, tag:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>?): T</code><br><code>open fun tag(type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, tag:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>?): T</code></td>
 </tr>
 </tbody>
 </table>

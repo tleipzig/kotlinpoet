@@ -419,7 +419,7 @@
 <tbody>
 <tr>
 <td><a href="-builder/">Builder</a></td>
-<td><code>class Builder :</code><a href="../-taggable/-builder/"><code>Taggable.Builder</code></a><code>&lt;</code><a href="-builder/"><code>TypeSpec.Builder</code></a><code>&gt;,</code><a href="../-originating-elements-holder/-builder/"><code>OriginatingElementsHolder.Builder</code></a><code>&lt;</code><a href="-builder/"><code>TypeSpec.Builder</code></a><code>&gt;</code></td>
+<td><code>class Builder : Builder&lt;Builder&gt;, Builder&lt;Builder&gt;</code></td>
 </tr>
 <tr>
 <td><a href="-kind/">Kind</a></td>
@@ -453,6 +453,10 @@
 <td><code>val initializerBlock:</code><a href="../-code-block/"><code>CodeBlock</code></a></td>
 </tr>
 <tr>
+<td><a href="initializer-index/">initializerIndex</a></td>
+<td><code>val initializerIndex:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a></td>
+</tr>
+<tr>
 <td><a href="is-annotation/">isAnnotation</a></td>
 <td><code>val isAnnotation:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a></td>
 </tr>
@@ -474,7 +478,7 @@
 </tr>
 <tr>
 <td><a href="kind/">kind</a></td>
-<td><code>val kind:</code><a href="-kind/"><code>TypeSpec.Kind</code></a></td>
+<td><code>val kind: Kind</code></td>
 </tr>
 <tr>
 <td><a href="modifiers/">modifiers</a></td>
@@ -502,7 +506,7 @@
 </tr>
 <tr>
 <td><a href="superinterfaces/">superinterfaces</a></td>
-<td><code>val superinterfaces:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="../-type-name/"><code>TypeName</code></a><code>,</code><a href="../-code-block/"><code>CodeBlock</code></a><code>?&gt;</code><br>Map of superinterfaces - entries with a null value represent a regular superinterface (with no delegation), while non-null <a href="../-code-block/">CodeBlock</a> values represent delegates for the corresponding <a href="./">TypeSpec</a> interface (key) value</td>
+<td>Map of superinterfaces - entries with a null value represent a regular superinterface (with no delegation), while non-null <a href="../-code-block/">CodeBlock</a> values represent delegates for the corresponding <a href="./">TypeSpec</a> interface (key) value<code>val superinterfaces:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="../-type-name/"><code>TypeName</code></a><code>,</code><a href="../-code-block/"><code>CodeBlock</code></a><code>?&gt;</code></td>
 </tr>
 <tr>
 <td><a href="type-specs/">typeSpecs</a></td>
@@ -533,7 +537,7 @@
 </tr>
 <tr>
 <td><a href="to-builder/">toBuilder</a></td>
-<td><code>fun toBuilder(kind:</code><a href="-kind/"><code>TypeSpec.Kind</code></a><code>= this.kind, name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>? = this.name):</code><a href="-builder/"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun toBuilder(kind: Kind = this.kind, name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>? = this.name): Builder</code></td>
 </tr>
 <tr>
 <td><a href="to-string/">toString</a></td>
@@ -552,35 +556,35 @@
 <tbody>
 <tr>
 <td><a href="annotation-builder/">annotationBuilder</a></td>
-<td><code>fun annotationBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a><br><code>fun annotationBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun annotationBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun annotationBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="anonymous-class-builder/">anonymousClassBuilder</a></td>
-<td><code>fun anonymousClassBuilder():</code><a href="-builder/"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun anonymousClassBuilder(): Builder</code></td>
 </tr>
 <tr>
 <td><a href="class-builder/">classBuilder</a></td>
-<td><code>fun classBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a><br><code>fun classBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun classBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun classBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="companion-object-builder/">companionObjectBuilder</a></td>
-<td><code>fun companionObjectBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>? = null):</code><a href="-builder/"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun companionObjectBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>? = null): Builder</code></td>
 </tr>
 <tr>
 <td><a href="enum-builder/">enumBuilder</a></td>
-<td><code>fun enumBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a><br><code>fun enumBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun enumBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun enumBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="expect-class-builder/">expectClassBuilder</a></td>
-<td><code>fun expectClassBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a><br><code>fun expectClassBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun expectClassBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun expectClassBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="interface-builder/">interfaceBuilder</a></td>
-<td><code>fun interfaceBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a><br><code>fun interfaceBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun interfaceBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun interfaceBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="object-builder/">objectBuilder</a></td>
-<td><code>fun objectBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a><br><code>fun objectBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>):</code><a href="-builder/"><code>TypeSpec.Builder</code></a></td>
+<td><code>fun objectBuilder(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun objectBuilder(className:</code><a href="../-class-name/"><code>ClassName</code></a><code>): Builder</code></td>
 </tr>
 </tbody>
 </table>
@@ -595,7 +599,7 @@
 <tbody>
 <tr>
 <td><a href="../tag/">tag</a></td>
-<td><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag():</code><a href="../tag/#T"><code>T</code></a><code>?</code><br>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.</td>
+<td>Returns the tag attached with <a href="../tag/#T">T</a> as a key, or null if no tag is attached with that key.<code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code><a href="../-taggable/"><code>Taggable</code></a><code>.tag(): T?</code></td>
 </tr>
 </tbody>
 </table>
