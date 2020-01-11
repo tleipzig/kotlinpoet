@@ -339,8 +339,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#version-144" class="md-nav__link">
-    Version 1.4.4
+  <a href="#version-150" class="md-nav__link">
+    Version 1.5.0
   </a>
   
 </li>
@@ -522,8 +522,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#version-144" class="md-nav__link">
-    Version 1.4.4
+  <a href="#version-150" class="md-nav__link">
+    Version 1.5.0
   </a>
   
 </li>
@@ -681,7 +681,31 @@
                 
                 
                 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
-<h2 id="version-144">Version 1.4.4<a class="headerlink" href="#version-144" title="Permanent link">&para;</a></h2>
+<h2 id="version-150">Version 1.5.0<a class="headerlink" href="#version-150" title="Permanent link">&para;</a></h2>
+<p><em>2020-01-09</em></p>
+<p>KotlinPoet now targets JDK8, which means that executing a build that includes KotlinPoet as a
+ dependency on a machine with an older version of JDK installed won&rsquo;t work. <strong>This has no effect on 
+ the code that KotlinPoet produces</strong>: the code can still be compiled against JDK6, as long as it 
+ doesn&rsquo;t use any features that were introduced in newer releases.</p>
+<ul>
+<li>New: Kotlin 1.3.61.</li>
+<li>New: Add support for processing FileFacades in KotlinPoet-metadata.</li>
+<li>New: Add support for inner nested and companion objects on annotation classes.</li>
+<li>New: Improve error messages for mismatched open/close statement characters.</li>
+<li>New: Tag <code>AnnotationSpec</code>s with the annotation mirror when available.</li>
+<li>New: Include annotations on enum entries when creating <code>TypeSpec</code>s from metadata.</li>
+<li>Fix: Fix metadata parsing for types.</li>
+<li>Fix: Allow file names that are Kotlin keywords.</li>
+<li>Fix: Properly escape type alias names with backticks.</li>
+<li>Fix: Allow creating <code>TypeSpec</code>s with names that can be escaped with backticks.</li>
+<li>Fix: Properly escape enum constant names with backticks.</li>
+<li>Fix: Maintain proper ordering of properties and initializers when emitting a <code>TypeSpec</code>. 
+   <strong>Note</strong>: with this change, any properties declared after any initializer blocks will not be
+   added to the primary constructor and will instead be emitted inside the <code>TypeSpec</code> body.</li>
+<li>Fix: Don&rsquo;t emit a leading new line if type KDoc is empty but parameter KDocs are present.</li>
+<li>Fix: Ensure KotlinPoet-metadata resolves package names properly.</li>
+</ul>
+<p>## Version 1.4.4</p>
 <p><em>2019-11-16</em></p>
 <ul>
 <li>Fix: Support reified inline types in KotlinPoet-metadata.</li>
