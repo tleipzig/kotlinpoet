@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/square/kotlinpoet/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/square/kotlinpoet" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/square/kotlinpoet/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/square/kotlinpoet" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -452,8 +452,6 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/square/kotlinpoet/edit/master/docs/1.x/kotlinpoet/com.squareup.kotlinpoet/-file-spec/-builder/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
                 
                 <p><a href="../../../">kotlinpoet</a> / <a href="../../">com.squareup.kotlinpoet</a> / <a href="../">FileSpec</a> / <a href="./">Builder</a></p>
 <h1 id="builder">Builder<a class="headerlink" href="#builder" title="Permanent link">&para;</a></h1>
@@ -470,6 +468,14 @@
 <tr>
 <td><a href="annotations/">annotations</a></td>
 <td><code>val annotations:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><code>MutableList</code></a><code>&lt;</code><a href="../../-annotation-spec/"><code>AnnotationSpec</code></a><code>&gt;</code></td>
+</tr>
+<tr>
+<td><a href="imports/">imports</a></td>
+<td><code>val imports:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../../-import/"><code>Import</code></a><code>&gt;</code></td>
+</tr>
+<tr>
+<td><a href="members/">members</a></td>
+<td><code>val members:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><code>MutableList</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt;</code></td>
 </tr>
 <tr>
 <td><a href="name/">name</a></td>
@@ -512,7 +518,7 @@
 </tr>
 <tr>
 <td><a href="add-import/">addImport</a></td>
-<td><code>fun addImport(constant:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html"><code>Enum</code></a><code>&lt;*&gt;): Builder</code><br><code>fun addImport(class:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;, vararg names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun addImport(class:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, vararg names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun addImport(className:</code><a href="../../-class-name/"><code>ClassName</code></a><code>, vararg names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun addImport(class:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;, names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;): Builder</code><br><code>fun addImport(class:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;): Builder</code><br><code>fun addImport(className:</code><a href="../../-class-name/"><code>ClassName</code></a><code>, names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;): Builder</code><br><code>fun addImport(packageName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun addImport(packageName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;): Builder</code></td>
+<td><code>fun addImport(constant:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html"><code>Enum</code></a><code>&lt;*&gt;): Builder</code><br><code>fun addImport(class:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;, vararg names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun addImport(class:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, vararg names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun addImport(className:</code><a href="../../-class-name/"><code>ClassName</code></a><code>, vararg names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun addImport(class:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;*&gt;, names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;): Builder</code><br><code>fun addImport(class:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;*&gt;, names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;): Builder</code><br><code>fun addImport(className:</code><a href="../../-class-name/"><code>ClassName</code></a><code>, names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;): Builder</code><br><code>fun addImport(packageName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, vararg names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>): Builder</code><br><code>fun addImport(packageName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, names:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><code>Iterable</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;): Builder</code><br><code>fun addImport(import:</code><a href="../../-import/"><code>Import</code></a><code>): Builder</code></td>
 </tr>
 <tr>
 <td><a href="add-property/">addProperty</a></td>
@@ -529,6 +535,14 @@
 <tr>
 <td><a href="build/">build</a></td>
 <td><code>fun build():</code><a href="../"><code>FileSpec</code></a></td>
+</tr>
+<tr>
+<td><a href="clear-comment/">clearComment</a></td>
+<td><code>fun clearComment(): Builder</code></td>
+</tr>
+<tr>
+<td><a href="clear-imports/">clearImports</a></td>
+<td><code>fun clearImports(): Builder</code></td>
 </tr>
 <tr>
 <td><a href="indent/">indent</a></td>

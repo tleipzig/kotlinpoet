@@ -152,7 +152,7 @@
 
   
 
-<a href="https://github.com/square/kotlinpoet/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/square/kotlinpoet" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -199,7 +199,7 @@
 
   
 
-<a href="https://github.com/square/kotlinpoet/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/square/kotlinpoet" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -320,6 +320,19 @@
   <a href="#m-for-members" class="md-nav__link">
     %M for Members
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#membername-and-operators" class="md-nav__link">
+    MemberName and operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -742,6 +755,19 @@
     %M for Members
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#membername-and-operators" class="md-nav__link">
+    MemberName and operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -945,8 +971,6 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-                
-                  <a href="https://github.com/square/kotlinpoet/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="kotlinpoet">KotlinPoet<a class="headerlink" href="#kotlinpoet" title="Permanent link">&para;</a></h1>
@@ -1247,9 +1271,6 @@ KotlinPoet has classes for building each of these:</p>
 <span class="p">}</span>
 </pre></div>
 
-<p>Note that due to a <a href="https://youtrack.jetbrains.com/issue/KT-15286">bug</a>, the IDE will not 
-autocomplete the <code>parameterizedBy</code> or <code>plusParameter</code> extensions and you&rsquo;ll have to add the import 
-statement manually to get those extensions.</p>
 <h4 id="nullable-types">Nullable Types<a class="headerlink" href="#nullable-types" title="Permanent link">&para;</a></h4>
 <p>KotlinPoet supports nullable types. To convert a <code>TypeName</code> into its nullable counterpart, use the 
 <code>copy()</code> method with <code>nullable</code> parameter set to <code>true</code>:</p>
@@ -1336,6 +1357,41 @@ around such cases though - use <code>FileSpec.addAliasedImport()</code> to creat
     <span class="k">val</span> <span class="py">cake</span> <span class="p">=</span> <span class="n">createCake</span><span class="p">()</span>
     <span class="n">println</span><span class="p">(</span><span class="n">taco</span><span class="p">.</span><span class="n">isTacoVegan</span><span class="p">)</span>
     <span class="n">println</span><span class="p">(</span><span class="n">cake</span><span class="p">.</span><span class="n">isCakeVegan</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+<h4 id="membername-and-operators">MemberName and operators<a class="headerlink" href="#membername-and-operators" title="Permanent link">&para;</a></h4>
+<p>MemberName also supports operators, you can use <code>MemberName(String, KOperator)</code> or <code>MemberName(ClassName, KOperator)</code>
+to import and reference operators.</p>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="py">taco</span> <span class="p">=</span> <span class="n">ClassName</span><span class="p">(</span><span class="s">&quot;com.squareup.tacos&quot;</span><span class="p">,</span> <span class="s">&quot;Taco&quot;</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">meat</span> <span class="p">=</span> <span class="n">ClassName</span><span class="p">(</span><span class="s">&quot;com.squareup.tacos.ingredient&quot;</span><span class="p">,</span> <span class="s">&quot;Meat&quot;</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">iterator</span> <span class="p">=</span> <span class="n">MemberName</span><span class="p">(</span><span class="s">&quot;com.squareup.tacos.internal&quot;</span><span class="p">,</span> <span class="n">KOperator</span><span class="p">.</span><span class="n">ITERATOR</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">minusAssign</span> <span class="p">=</span> <span class="n">MemberName</span><span class="p">(</span><span class="s">&quot;com.squareup.tacos.internal&quot;</span><span class="p">,</span> <span class="n">KOperator</span><span class="p">.</span><span class="n">MINUS_ASSIGN</span><span class="p">)</span>
+<span class="k">val</span> <span class="py">file</span> <span class="p">=</span> <span class="n">FileSpec</span><span class="p">.</span><span class="n">builder</span><span class="p">(</span><span class="s">&quot;com.example&quot;</span><span class="p">,</span> <span class="s">&quot;Test&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">addFunction</span><span class="p">(</span><span class="n">FunSpec</span><span class="p">.</span><span class="n">builder</span><span class="p">(</span><span class="s">&quot;makeTacoHealthy&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">addParameter</span><span class="p">(</span><span class="s">&quot;taco&quot;</span><span class="p">,</span> <span class="n">taco</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">beginControlFlow</span><span class="p">(</span><span class="s">&quot;for (ingredient %M taco)&quot;</span><span class="p">,</span> <span class="n">iterator</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">addStatement</span><span class="p">(</span><span class="s">&quot;if (ingredient is %T) taco %M ingredient&quot;</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">minusAssign</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">endControlFlow</span><span class="p">()</span>
+        <span class="p">.</span><span class="n">addStatement</span><span class="p">(</span><span class="s">&quot;return taco&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">build</span><span class="p">())</span>
+    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+<span class="n">println</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+
+<p>KotlinPoet will import the extension operator functions and emit the operator.</p>
+<div class="codehilite"><pre><span></span><span class="k">package</span> <span class="nn">com.example</span>
+
+<span class="k">import</span> <span class="nn">com.squareup.tacos.Taco</span>
+<span class="k">import</span> <span class="nn">com.squareup.tacos.ingredient.Meat</span>
+<span class="k">import</span> <span class="nn">com.squareup.tacos.internal.iterator</span>
+<span class="k">import</span> <span class="nn">com.squareup.tacos.internal.minusAssign</span>
+
+<span class="k">fun</span> <span class="nf">makeTacoHealthy</span><span class="p">(</span><span class="n">taco</span><span class="p">:</span> <span class="n">Taco</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">ingredient</span> <span class="k">in</span> <span class="n">taco</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ingredient</span> <span class="k">is</span> <span class="n">Meat</span><span class="p">)</span> <span class="n">taco</span> <span class="p">-=</span> <span class="n">ingredient</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">taco</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1737,12 +1793,26 @@ The modifier is necessary when defining the interface:</p>
     <span class="p">.</span><span class="n">build</span><span class="p">()</span>
 </pre></div>
 
-<p>But these modifiers are omitted when the code is generated. These are the defaults so we don&rsquo;t need
+<p>But these modifiers are omitted when the code is generated. These are the default so we don&rsquo;t need
 to include them for <code>kotlinc</code>&lsquo;s benefit!</p>
 <div class="codehilite"><pre><span></span><span class="k">interface</span> <span class="nc">HelloWorld</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">buzz</span><span class="p">:</span> <span class="n">String</span>
 
     <span class="k">fun</span> <span class="nf">beep</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Kotlin 1.4 adds support for functional interfaces via <code>fun interface</code> syntax. To create this in 
+KotlinPoet, use <code>TypeSpec.funInterfaceBuilder()</code>.</p>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="py">helloWorld</span> <span class="p">=</span> <span class="n">TypeSpec</span><span class="p">.</span><span class="n">funInterfaceBuilder</span><span class="p">(</span><span class="s">&quot;HelloWorld&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="n">addFunction</span><span class="p">(</span><span class="n">FunSpec</span><span class="p">.</span><span class="n">builder</span><span class="p">(</span><span class="s">&quot;beep&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">addModifiers</span><span class="p">(</span><span class="n">KModifier</span><span class="p">.</span><span class="n">ABSTRACT</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">build</span><span class="p">())</span>
+    <span class="p">.</span><span class="n">build</span><span class="p">()</span>
+
+<span class="c1">// Generates...</span>
+<span class="k">fun</span> <span class="nf">interface</span> <span class="n">HelloWorld</span> <span class="p">{</span>
+  <span class="k">fun</span> <span class="nf">beep</span><span class="p">()</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -2027,12 +2097,12 @@ constructors, functions, and properties may be emitted via:</p>
 <div class="codehilite"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
   <span class="nt">&lt;groupId&gt;</span>com.squareup<span class="nt">&lt;/groupId&gt;</span>
   <span class="nt">&lt;artifactId&gt;</span>kotlinpoet<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;version&gt;</span>1.5.0<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;version&gt;</span>1.6.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </pre></div>
 
 <p>or Gradle:</p>
-<div class="codehilite"><pre><span></span><span class="n">compile</span> <span class="s1">&#39;com.squareup:kotlinpoet:1.5.0&#39;</span>
+<div class="codehilite"><pre><span></span><span class="n">compile</span> <span class="s1">&#39;com.squareup:kotlinpoet:1.6.0&#39;</span>
 </pre></div>
 
 <p>Snapshots of the development version are available in <a href="https://oss.sonatype.org/content/repositories/snapshots/com/squareup/kotlinpoet/">Sonatype&rsquo;s <code>snapshots</code> repository</a>.</p>

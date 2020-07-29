@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/square/kotlinpoet/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/square/kotlinpoet" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/square/kotlinpoet/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/square/kotlinpoet" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -429,17 +429,18 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/square/kotlinpoet/edit/master/docs/1.x/kotlinpoet-metadata/com.squareup.kotlinpoet.metadata/-immutable-km-class/local-delegated-properties.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
                 
                 <p><a href="../../../">kotlinpoet-metadata</a> / <a href="../../">com.squareup.kotlinpoet.metadata</a> / <a href="../">ImmutableKmClass</a> / <a href="./">localDelegatedProperties</a></p>
 <h1 id="localdelegatedproperties">localDelegatedProperties<a class="headerlink" href="#localdelegatedproperties" title="Permanent link">&para;</a></h1>
 <p><code>val localDelegatedProperties:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../../-immutable-km-property/"><code>ImmutableKmProperty</code></a><code>&gt;</code></p>
-<p>Metadata of local delegated properties used somewhere inside this class (but not in a nested class).
-Note that for classes produced by the Kotlin compiler, such properties will have default accessors.</p>
-<p>The order of local delegated properties in this list is important. The Kotlin compiler generates the corresponding property&rsquo;s index
-at the call site, so that reflection would be able to load the metadata of the property with that index at runtime.
-If an incorrect index is used, either the <code>KProperty&lt;*&gt;</code> object passed to delegate methods will point to the wrong property
+<p>Metadata of local delegated properties used somewhere inside this class (but not in a nested
+class).
+Note that for classes produced by the Kotlin compiler, such properties will have default
+accessors.</p>
+<p>The order of local delegated properties in this list is important. The Kotlin compiler
+generates the corresponding property&rsquo;s index at the call site, so that reflection would be able
+to load the metadata of the property with that index at runtime. If an incorrect index is used,
+either the <code>KProperty&lt;*&gt;</code> object passed to delegate methods will point to the wrong property
 at runtime, or an exception will be thrown.</p>
                 
                   

@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/square/kotlinpoet/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/square/kotlinpoet" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/square/kotlinpoet/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/square/kotlinpoet" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -473,8 +473,6 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/square/kotlinpoet/edit/master/docs/1.x/kotlinpoet/com.squareup.kotlinpoet/-annotation-spec/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
                 
                 <p><a href="../../">kotlinpoet</a> / <a href="../">com.squareup.kotlinpoet</a> / <a href="./">AnnotationSpec</a></p>
 <h1 id="annotationspec">AnnotationSpec<a class="headerlink" href="#annotationspec" title="Permanent link">&para;</a></h1>
@@ -510,11 +508,15 @@
 <tbody>
 <tr>
 <td><a href="class-name/">className</a></td>
-<td><code>val className:</code><a href="../-class-name/"><code>ClassName</code></a></td>
+<td><code>val ~~className~~:</code><a href="../-class-name/"><code>ClassName</code></a></td>
 </tr>
 <tr>
 <td><a href="members/">members</a></td>
 <td><code>val members:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><code>List</code></a><code>&lt;</code><a href="../-code-block/"><code>CodeBlock</code></a><code>&gt;</code></td>
+</tr>
+<tr>
+<td><a href="type-name/">typeName</a></td>
+<td><code>val typeName:</code><a href="../-type-name/"><code>TypeName</code></a></td>
 </tr>
 <tr>
 <td><a href="use-site-target/">useSiteTarget</a></td>
@@ -560,11 +562,11 @@
 <tbody>
 <tr>
 <td><a href="builder/">builder</a></td>
-<td><code>fun builder(type:</code><a href="../-class-name/"><code>ClassName</code></a><code>): Builder</code><br><code>fun builder(type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;out</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><code>Annotation</code></a><code>&gt;): Builder</code><br><code>fun builder(type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><code>Annotation</code></a><code>&gt;): Builder</code></td>
+<td><code>fun builder(type:</code><a href="../-class-name/"><code>ClassName</code></a><code>): Builder</code><br><code>fun builder(type:</code><a href="../-parameterized-type-name/"><code>ParameterizedTypeName</code></a><code>): Builder</code><br><code>fun builder(type:</code><a href="https://docs.oracle.com/javase/6/docs/api/java/lang/Class.html"><code>Class</code></a><code>&lt;out</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><code>Annotation</code></a><code>&gt;): Builder</code><br><code>fun builder(type:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><code>KClass</code></a><code>&lt;out</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><code>Annotation</code></a><code>&gt;): Builder</code></td>
 </tr>
 <tr>
 <td><a href="get/">get</a></td>
-<td><code>fun get(annotation:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><code>Annotation</code></a><code>, includeDefaultValues:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><code>= false):</code><a href="./"><code>AnnotationSpec</code></a><br><code>fun get(annotation:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/AnnotationMirror.html"><code>AnnotationMirror</code></a><code>):</code><a href="./"><code>AnnotationSpec</code></a></td>
+<td><code>fun get(annotation:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html"><code>Annotation</code></a><code>, includeDefaultValues:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a><code>= false):</code><a href="./"><code>AnnotationSpec</code></a><br><code>fun ~~get~~(annotation:</code><a href="https://docs.oracle.com/javase/6/docs/api/javax/lang/model/element/AnnotationMirror.html"><code>AnnotationMirror</code></a><code>):</code><a href="./"><code>AnnotationSpec</code></a></td>
 </tr>
 </tbody>
 </table>
