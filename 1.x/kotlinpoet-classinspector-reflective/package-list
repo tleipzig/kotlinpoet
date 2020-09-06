@@ -1,4 +1,5 @@
-$dokka.format:gfm
-$dokka.linkExtension:md
+$dokka.format:html-v1
+$dokka.linkExtension:html
 
 com.squareup.kotlinpoet.classinspector.reflective
+

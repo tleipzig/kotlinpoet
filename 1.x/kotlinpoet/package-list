@@ -1,18 +1,6 @@
-$dokka.format:gfm
-$dokka.linkExtension:md
-$dokka.location:com.squareup.kotlinpoet$asClassName(java.lang.Class((kotlin.Any)))com.squareup.kotlinpoet/java.lang.-class/as-class-name.md
-$dokka.location:com.squareup.kotlinpoet$asClassName(javax.lang.model.element.TypeElement)com.squareup.kotlinpoet/javax.lang.model.element.-type-element/as-class-name.md
-$dokka.location:com.squareup.kotlinpoet$asClassName(kotlin.reflect.KClass((kotlin.Any)))com.squareup.kotlinpoet/kotlin.reflect.-k-class/as-class-name.md
-$dokka.location:com.squareup.kotlinpoet$asParameterizedTypeName(java.lang.reflect.ParameterizedType)com.squareup.kotlinpoet/java.lang.reflect.-parameterized-type/as-parameterized-type-name.md
-$dokka.location:com.squareup.kotlinpoet$asTypeName(java.lang.reflect.Type)com.squareup.kotlinpoet/java.lang.reflect.-type/as-type-name.md
-$dokka.location:com.squareup.kotlinpoet$asTypeName(javax.lang.model.type.TypeMirror)com.squareup.kotlinpoet/javax.lang.model.type.-type-mirror/as-type-name.md
-$dokka.location:com.squareup.kotlinpoet$asTypeName(kotlin.reflect.KClass((kotlin.Any)))com.squareup.kotlinpoet/kotlin.reflect.-k-class/as-type-name.md
-$dokka.location:com.squareup.kotlinpoet$asTypeName(kotlin.reflect.KType)com.squareup.kotlinpoet/kotlin.reflect.-k-type/as-type-name.md
-$dokka.location:com.squareup.kotlinpoet$asTypeVariableName(javax.lang.model.element.TypeParameterElement)com.squareup.kotlinpoet/javax.lang.model.element.-type-parameter-element/as-type-variable-name.md
-$dokka.location:com.squareup.kotlinpoet$asTypeVariableName(javax.lang.model.type.TypeVariable)com.squareup.kotlinpoet/javax.lang.model.type.-type-variable/as-type-variable-name.md
-$dokka.location:com.squareup.kotlinpoet$asTypeVariableName(kotlin.reflect.KTypeParameter)com.squareup.kotlinpoet/kotlin.reflect.-k-type-parameter/as-type-variable-name.md
-$dokka.location:com.squareup.kotlinpoet$asWildcardTypeName(java.lang.reflect.WildcardType)com.squareup.kotlinpoet/java.lang.reflect.-wildcard-type/as-wildcard-type-name.md
-$dokka.location:com.squareup.kotlinpoet$asWildcardTypeName(javax.lang.model.type.WildcardType)com.squareup.kotlinpoet/javax.lang.model.type.-wildcard-type/as-wildcard-type-name.md
-$dokka.location:com.squareup.kotlinpoet$joinToCode(kotlin.collections.Collection((com.squareup.kotlinpoet.CodeBlock)), kotlin.CharSequence, kotlin.CharSequence, kotlin.CharSequence)com.squareup.kotlinpoet/kotlin.collections.-collection/join-to-code.md
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
 com.squareup.kotlinpoet
 com.squareup.kotlinpoet.jvm
+

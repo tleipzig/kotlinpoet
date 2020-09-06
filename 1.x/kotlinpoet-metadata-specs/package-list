@@ -1,13 +1,6 @@
-$dokka.format:gfm
-$dokka.linkExtension:md
-$dokka.location:com.squareup.kotlinpoet.metadata.specs$toFileSpec(com.squareup.kotlinpoet.metadata.ImmutableKmClass, com.squareup.kotlinpoet.metadata.specs.ClassInspector, com.squareup.kotlinpoet.ClassName)com.squareup.kotlinpoet.metadata.specs/com.squareup.kotlinpoet.metadata.-immutable-km-class/to-file-spec.md
-$dokka.location:com.squareup.kotlinpoet.metadata.specs$toFileSpec(com.squareup.kotlinpoet.metadata.ImmutableKmPackage, com.squareup.kotlinpoet.metadata.specs.ClassInspector, com.squareup.kotlinpoet.ClassName)com.squareup.kotlinpoet.metadata.specs/com.squareup.kotlinpoet.metadata.-immutable-km-package/to-file-spec.md
-$dokka.location:com.squareup.kotlinpoet.metadata.specs$toFileSpec(java.lang.Class((kotlin.Any)), com.squareup.kotlinpoet.metadata.specs.ClassInspector)com.squareup.kotlinpoet.metadata.specs/java.lang.-class/to-file-spec.md
-$dokka.location:com.squareup.kotlinpoet.metadata.specs$toFileSpec(javax.lang.model.element.TypeElement, com.squareup.kotlinpoet.metadata.specs.ClassInspector)com.squareup.kotlinpoet.metadata.specs/javax.lang.model.element.-type-element/to-file-spec.md
-$dokka.location:com.squareup.kotlinpoet.metadata.specs$toFileSpec(kotlin.reflect.KClass((kotlin.Any)), com.squareup.kotlinpoet.metadata.specs.ClassInspector)com.squareup.kotlinpoet.metadata.specs/kotlin.reflect.-k-class/to-file-spec.md
-$dokka.location:com.squareup.kotlinpoet.metadata.specs$toTypeSpec(com.squareup.kotlinpoet.metadata.ImmutableKmClass, com.squareup.kotlinpoet.metadata.specs.ClassInspector, com.squareup.kotlinpoet.ClassName)com.squareup.kotlinpoet.metadata.specs/com.squareup.kotlinpoet.metadata.-immutable-km-class/to-type-spec.md
-$dokka.location:com.squareup.kotlinpoet.metadata.specs$toTypeSpec(java.lang.Class((kotlin.Any)), com.squareup.kotlinpoet.metadata.specs.ClassInspector)com.squareup.kotlinpoet.metadata.specs/java.lang.-class/to-type-spec.md
-$dokka.location:com.squareup.kotlinpoet.metadata.specs$toTypeSpec(javax.lang.model.element.TypeElement, com.squareup.kotlinpoet.metadata.specs.ClassInspector)com.squareup.kotlinpoet.metadata.specs/javax.lang.model.element.-type-element/to-type-spec.md
-$dokka.location:com.squareup.kotlinpoet.metadata.specs$toTypeSpec(kotlin.reflect.KClass((kotlin.Any)), com.squareup.kotlinpoet.metadata.specs.ClassInspector)com.squareup.kotlinpoet.metadata.specs/kotlin.reflect.-k-class/to-type-spec.md
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
 com.squareup.kotlinpoet.metadata.specs
 com.squareup.kotlinpoet.metadata.specs.internal
+
