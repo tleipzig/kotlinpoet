@@ -393,6 +393,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-171" class="md-nav__link">
+    Version 1.7.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-170" class="md-nav__link">
+    Version 1.7.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-160" class="md-nav__link">
     Version 1.6.0
   </a>
@@ -584,6 +598,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#version-171" class="md-nav__link">
+    Version 1.7.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-170" class="md-nav__link">
+    Version 1.7.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version-160" class="md-nav__link">
     Version 1.6.0
   </a>
@@ -751,6 +779,27 @@
                 
                 
                 <h1 id="change-log">Change Log<a class="headerlink" href="#change-log" title="Permanent link">&para;</a></h1>
+<h2 id="version-171">Version 1.7.1<a class="headerlink" href="#version-171" title="Permanent link">&para;</a></h2>
+<p><em>2020-10-15</em></p>
+<ul>
+<li>Fix: 1.7.0 was published using JDK 11 which set <code>"org.gradle.jvm.version"</code> to <code>"11"</code> in Gradle 
+   metadata, making it impossible to use the library on earlier Java versions (see 
+   <a href="https://github.com/square/kotlinpoet/issues/999">#999</a>). 1.7.1 is published with JDK 8, which fixes the problem.</li>
+</ul>
+<h2 id="version-170">Version 1.7.0<a class="headerlink" href="#version-170" title="Permanent link">&para;</a></h2>
+<p><em>2020-10-14</em></p>
+<ul>
+<li>New: Kotlin 1.4.10.</li>
+<li>New: Generated code is now compatible with the <a href="https://kotlinlang.org/docs/reference/whatsnew14.html#explicit-api-mode-for-library-authors">explicit API mode</a> by default.</li>
+<li>New: Escape soft and modifier keywords, in addition to hard keywords.</li>
+<li>New: Improve enum constants generation for cleaner diffs.</li>
+<li>New: Disallow setters on immutable properties.</li>
+<li>New: Ensure trailing new lines in expression bodies.</li>
+<li>New: Ensure trailing new lines after parameterless custom setters.</li>
+<li>Fix: Don&rsquo;t auto-convert properties with custom accessors to primary constructor properties.</li>
+<li>Fix: Don&rsquo;t allow parameterless setters with body.</li>
+<li>Fix: Prevent auto-wrapping spaces inside escaped keywords.</li>
+</ul>
 <h2 id="version-160">Version 1.6.0<a class="headerlink" href="#version-160" title="Permanent link">&para;</a></h2>
 <p><em>2020-05-28</em></p>
 <ul>

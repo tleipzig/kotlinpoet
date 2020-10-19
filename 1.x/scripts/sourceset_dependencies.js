@@ -1,1 +1,1 @@
-sourceset_dependencies = '{":kotlinpoet-classinspector-reflective:dokkaHtml/main": []}'
+sourceset_dependencies = '{":kotlinpoet-metadata-specs:dokkaHtml/main": []}'
