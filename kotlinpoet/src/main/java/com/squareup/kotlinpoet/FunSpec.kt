@@ -147,9 +147,11 @@ public class FunSpec private constructor(
 
     if (returnType != null) {
       codeWriter.emitCode(": %T", returnType)
-    } else if (emitUnitReturnType()) {
-      codeWriter.emitCode(": %T", Unit::class.asTypeName())
     }
+    // Update - don't print the Unit response
+    /* else if (emitUnitReturnType()) {
+      codeWriter.emitCode(": %T", Unit::class.asTypeName())
+    } */
 
     if (delegateConstructor != null) {
       codeWriter.emitCode(

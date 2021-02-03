@@ -156,10 +156,11 @@ internal class CodeWriter constructor(
     modifiers: Set<KModifier>,
     implicitModifiers: Set<KModifier> = emptySet()
   ) {
-    if (shouldEmitPublicModifier(modifiers, implicitModifiers)) {
+    // Update - don't print public modifier
+    /* if (shouldEmitPublicModifier(modifiers, implicitModifiers)) {
       emit(KModifier.PUBLIC.keyword)
       emit(" ")
-    }
+    } */
     for (modifier in modifiers.toEnumSet()) {
       if (modifier in implicitModifiers) continue
       emit(modifier.keyword)
