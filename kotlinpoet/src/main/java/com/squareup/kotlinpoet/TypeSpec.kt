@@ -98,6 +98,9 @@ public class TypeSpec private constructor(
     implicitModifiers: Set<KModifier> = emptySet(),
     isNestedExternal: Boolean = false
   ) {
+    // Bootify
+    codeWriter.emit("\n")
+
     // Types.
     val areNestedExternal = EXTERNAL in modifiers || isNestedExternal
 
@@ -224,7 +227,7 @@ public class TypeSpec private constructor(
           codeWriter.emit("\n")
           return // Avoid unnecessary braces "{}".
         }
-        codeWriter.emit(" {\n")
+        codeWriter.emit(" {\n\n"); // Bootify " {\n"
       }
 
       codeWriter.pushType(this)
@@ -307,7 +310,7 @@ public class TypeSpec private constructor(
       codeWriter.unindent()
       codeWriter.popType()
 
-      codeWriter.emit("}")
+      codeWriter.emit("\n}") // Bootify "}"
       if (enumName == null && !isAnonymousClass) {
         codeWriter.emit("\n") // If this type isn't also a value, include a trailing newline.
       }
@@ -449,7 +452,7 @@ public class TypeSpec private constructor(
 
   public class Builder internal constructor(
     internal var kind: Kind,
-    internal val name: String?,
+    public val name: String?,
     vararg modifiers: KModifier
   ) : Taggable.Builder<Builder>, OriginatingElementsHolder.Builder<Builder> {
     internal val kdoc = CodeBlock.builder()

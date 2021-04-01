@@ -148,6 +148,8 @@ public class FileSpec private constructor(
     val (aliasedImports, nonAliasedImports) = memberImports.values.partition { it.alias != null }
     val imports = (importedTypeNames + importedMemberNames)
       .filterNot { it in memberImports.keys }
+      // Bootify
+      .filterNot { it.startsWith("kotlin.") }
       .map { it.escapeSegmentsIfNecessary() }
       .plus(nonAliasedImports.map { it.toString() })
       .toSortedSet()
