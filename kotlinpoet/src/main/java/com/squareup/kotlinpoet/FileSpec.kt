@@ -150,7 +150,8 @@ public class FileSpec private constructor(
       .filterNot { it in memberImports.keys }
       // Bootify
       .filterNot { it.startsWith("kotlin.") }
-      .map { it.escapeSegmentsIfNecessary() }
+      // Bootify - don't escape package names
+      // .map { it.escapeSegmentsIfNecessary() }
       .plus(nonAliasedImports.map { it.toString() })
       .toSortedSet()
       .plus(aliasedImports.map { it.toString() }.toSortedSet())

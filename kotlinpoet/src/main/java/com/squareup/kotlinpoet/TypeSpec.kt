@@ -452,7 +452,7 @@ public class TypeSpec private constructor(
 
   public class Builder internal constructor(
     internal var kind: Kind,
-    public val name: String?,
+    public val name: String?, // Bootify
     vararg modifiers: KModifier
   ) : Taggable.Builder<Builder>, OriginatingElementsHolder.Builder<Builder> {
     internal val kdoc = CodeBlock.builder()
@@ -584,6 +584,13 @@ public class TypeSpec private constructor(
 
     public fun addSuperinterfaces(superinterfaces: Iterable<TypeName>): Builder = apply {
       this.superinterfaces.putAll(superinterfaces.map { it to null })
+    }
+
+    // Bootify
+    public fun addSuperinterface(
+      superinterface: TypeName
+    ): Builder = apply {
+      addSuperinterface(superinterface, CodeBlock.EMPTY)
     }
 
     public fun addSuperinterface(
