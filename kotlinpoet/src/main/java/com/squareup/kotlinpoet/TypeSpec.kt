@@ -96,10 +96,11 @@ public class TypeSpec private constructor(
     codeWriter: CodeWriter,
     enumName: String?,
     implicitModifiers: Set<KModifier> = emptySet(),
-    isNestedExternal: Boolean = false
+    isNestedExternal: Boolean = false,
+    noBreak: Boolean = false
   ) {
     // Bootify
-    codeWriter.emit("\n")
+    if (!noBreak) codeWriter.emit("\n")
 
     // Types.
     val areNestedExternal = EXTERNAL in modifiers || isNestedExternal
@@ -234,9 +235,10 @@ public class TypeSpec private constructor(
       codeWriter.indent()
       var firstMember = true
       for ((key, value) in enumConstants.entries) {
-        if (!firstMember) codeWriter.emit("\n")
-        value.emit(codeWriter, key)
-        codeWriter.emit(",")
+        // Bootify fixes
+        if (!firstMember) codeWriter.emit(",\n")
+        value.emit(codeWriter, key, noBreak = true)
+        // codeWriter.emit(",")
         firstMember = false
       }
       if (isEnum) {
