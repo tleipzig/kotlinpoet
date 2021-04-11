@@ -80,7 +80,8 @@ private val Char.isIsoControl: Boolean
 internal fun stringLiteralWithQuotes(
   value: String,
   escapeDollarSign: Boolean = true,
-  isConstantContext: Boolean = false
+  isConstantContext: Boolean = false,
+  threeQuotes: Boolean = false // Bootify workaround
 ): String {
   if (!isConstantContext && '\n' in value) {
     val result = StringBuilder(value.length + 32)
@@ -112,7 +113,7 @@ internal fun stringLiteralWithQuotes(
     val result = StringBuilder(value.length + 32)
     // using pre-formatted strings allows us to get away with not escaping symbols that would
     // normally require escaping, e.g. "foo ${"bar"} baz"
-    if (escapeDollarSign) result.append('"') else result.append("\"\"\"")
+    if (escapeDollarSign || !threeQuotes) result.append('"') else result.append("\"\"\"")
     for (i in 0 until value.length) {
       val c = value[i]
       // Trivial case: single quote must not be escaped.
@@ -134,7 +135,7 @@ internal fun stringLiteralWithQuotes(
       result.append(characterLiteralWithoutSingleQuotes(c))
       // Need to append indent after linefeed?
     }
-    if (escapeDollarSign) result.append('"') else result.append("\"\"\"")
+    if (escapeDollarSign || !threeQuotes) result.append('"') else result.append("\"\"\"")
     return result.toString()
   }
 }
