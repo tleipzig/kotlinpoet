@@ -21,7 +21,6 @@ import com.google.testing.compile.CompilationRule
 import com.squareup.kotlinpoet.KModifier.ABSTRACT
 import com.squareup.kotlinpoet.KModifier.DATA
 import com.squareup.kotlinpoet.KModifier.IN
-import com.squareup.kotlinpoet.KModifier.INLINE
 import com.squareup.kotlinpoet.KModifier.INNER
 import com.squareup.kotlinpoet.KModifier.INTERNAL
 import com.squareup.kotlinpoet.KModifier.PRIVATE
@@ -424,7 +423,7 @@ class TypeSpecTest {
         |    "User-Agent: foobar"
         |  )
         |  @POST("/foo/bar")
-        |  public abstract fun fooBar(
+        |  public fun fooBar(
         |    @Body things: Things<Thing>,
         |    @QueryMap(encodeValues = false) query: Map<String, String>,
         |    @Header("Authorization") authorization: String
@@ -718,7 +717,6 @@ class TypeSpecTest {
           .build()
       )
       .build()
-    println(toString(taco))
     assertThat(toString(taco)).isEqualTo(
       """
         |package com.squareup.tacos
@@ -729,7 +727,7 @@ class TypeSpecTest {
         |  contents: String
         |) {
         |  public var contents: String = contents
-        |    set(value) {
+        |    set(`value`) {
         |      println("contents changed!")
         |      field = value
         |    }
@@ -1084,7 +1082,7 @@ class TypeSpecTest {
         |import kotlin.Int
         |
         |public enum class Sort(
-        |  value: Int
+        |  `value`: Int
         |) {
         |  `open`(0),
         |  closed(1),
@@ -1129,7 +1127,7 @@ class TypeSpecTest {
         |import kotlin.Unit
         |
         |public fun interface Taco {
-        |  public abstract fun sam(): Unit
+        |  public fun sam(): Unit
         |
         |  public fun notSam(): Unit {
         |  }
@@ -1524,7 +1522,6 @@ class TypeSpecTest {
             TypeSpec.classBuilder("ClassC")
               .addFunction(
                 FunSpec.constructorBuilder()
-                  .addStatement("Unit")
                   .build()
               )
               .build()
@@ -1556,7 +1553,6 @@ class TypeSpecTest {
                 TypeSpec.classBuilder("ClassD")
                   .addFunction(
                     FunSpec.constructorBuilder()
-                      .addStatement("Unit")
                       .build()
                   )
                   .build()
@@ -1604,7 +1600,7 @@ class TypeSpecTest {
         |import kotlin.Unit
         |
         |public interface Taco {
-        |  public abstract fun aMethod(): Unit
+        |  public fun aMethod(): Unit
         |
         |  public fun aDefaultMethod(): Unit {
         |  }
@@ -2525,216 +2521,6 @@ class TypeSpecTest {
         |      |${"\"\"\""}.trimMargin()
         |}
         |""".trimMargin()
-    )
-  }
-
-  @Test fun validInlineClass() {
-    val guacamole = TypeSpec.classBuilder("Guacamole")
-      .primaryConstructor(
-        FunSpec.constructorBuilder()
-          .addParameter("avacado", String::class)
-          .build()
-      )
-      .addProperty(
-        PropertySpec.builder("avacado", String::class)
-          .initializer("avacado")
-          .build()
-      )
-      .addModifiers(INLINE)
-      .build()
-
-    assertThat(guacamole.toString()).isEqualTo(
-      """
-      |public inline class Guacamole(
-      |  public val avacado: kotlin.String
-      |)
-      |""".trimMargin()
-    )
-  }
-
-  @Test fun inlineClassWithInitBlock() {
-    val guacamole = TypeSpec.classBuilder("Guacamole")
-      .primaryConstructor(
-        FunSpec.constructorBuilder()
-          .addParameter("avacado", String::class)
-          .build()
-      )
-      .addProperty(
-        PropertySpec.builder("avacado", String::class)
-          .initializer("avacado")
-          .build()
-      )
-      .addInitializerBlock(CodeBlock.EMPTY)
-      .addModifiers(INLINE)
-      .build()
-
-    assertThat(guacamole.toString()).isEqualTo(
-      """
-      |public inline class Guacamole(
-      |  public val avacado: kotlin.String
-      |) {
-      |  init {
-      |  }
-      |}
-      |""".trimMargin()
-    )
-  }
-
-  class InlineSuperClass
-
-  @Test fun inlineClassWithSuperClass() {
-    assertThrows<IllegalStateException> {
-      TypeSpec.classBuilder("Guacamole")
-        .primaryConstructor(
-          FunSpec.constructorBuilder()
-            .addParameter("avocado", String::class)
-            .build()
-        )
-        .addProperty(
-          PropertySpec.builder("avocado", String::class)
-            .initializer("avocado")
-            .build()
-        )
-        .superclass(InlineSuperClass::class)
-        .addModifiers(INLINE)
-        .build()
-    }.hasMessageThat().isEqualTo("Inline classes cannot have super classes")
-  }
-
-  interface InlineSuperInterface
-
-  @Test fun inlineClassInheritsFromInterface() {
-    val guacamole = TypeSpec.classBuilder("Guacamole")
-      .primaryConstructor(
-        FunSpec.constructorBuilder()
-          .addParameter("avocado", String::class)
-          .build()
-      )
-      .addProperty(
-        PropertySpec.builder("avocado", String::class)
-          .initializer("avocado")
-          .build()
-      )
-      .addSuperinterface(InlineSuperInterface::class)
-      .addModifiers(INLINE)
-      .build()
-
-    assertThat(guacamole.toString()).isEqualTo(
-      """
-      |public inline class Guacamole(
-      |  public val avocado: kotlin.String
-      |) : com.squareup.kotlinpoet.TypeSpecTest.InlineSuperInterface
-      |""".trimMargin()
-    )
-  }
-
-  @Test fun inlineClassWithoutBackingProperty() {
-    assertThrows<IllegalArgumentException> {
-      TypeSpec.classBuilder("Guacamole")
-        .primaryConstructor(
-          FunSpec.constructorBuilder()
-            .addParameter("avocado", String::class)
-            .build()
-        )
-        .addProperty("garlic", String::class)
-        .addModifiers(INLINE)
-        .build()
-    }.hasMessageThat().isEqualTo("Inline classes must have a single read-only (val) property parameter.")
-  }
-
-  @Test fun inlineClassWithoutProperties() {
-    assertThrows<IllegalStateException> {
-      TypeSpec.classBuilder("Guacamole")
-        .primaryConstructor(
-          FunSpec.constructorBuilder()
-            .addParameter("avocado", String::class)
-            .build()
-        )
-        .addModifiers(INLINE)
-        .build()
-    }.hasMessageThat().isEqualTo("Inline classes must have at least 1 property")
-  }
-
-  @Test fun inlineClassWithMutableProperties() {
-    assertThrows<IllegalStateException> {
-      TypeSpec.classBuilder("Guacamole")
-        .primaryConstructor(
-          FunSpec.constructorBuilder()
-            .addParameter("avocado", String::class)
-            .build()
-        )
-        .addProperty(
-          PropertySpec.builder("avocado", String::class)
-            .initializer("avocado")
-            .mutable()
-            .build()
-        )
-        .addModifiers(INLINE)
-        .build()
-    }.hasMessageThat().isEqualTo("Inline classes must have a single read-only (val) property parameter.")
-  }
-
-  @Test fun inlineClassWithPrivateConstructor() {
-    val guacamole = TypeSpec.classBuilder("Guacamole")
-      .primaryConstructor(
-        FunSpec.constructorBuilder()
-          .addParameter("avocado", String::class)
-          .addModifiers(PRIVATE)
-          .build()
-      )
-      .addProperty(
-        PropertySpec.builder("avocado", String::class)
-          .initializer("avocado")
-          .build()
-      )
-      .addModifiers(INLINE)
-      .build()
-
-    assertThat(guacamole.toString()).isEqualTo(
-      """
-      |public inline class Guacamole private constructor(
-      |  public val avocado: kotlin.String
-      |)
-      |""".trimMargin()
-    )
-  }
-
-  @Test fun inlineEnumClass() {
-    val guacamole = TypeSpec.enumBuilder("Foo")
-      .primaryConstructor(
-        FunSpec.constructorBuilder()
-          .addParameter("x", Int::class)
-          .build()
-      )
-      .addEnumConstant(
-        "A",
-        TypeSpec.anonymousClassBuilder()
-          .addSuperclassConstructorParameter("%L", 1)
-          .build()
-      )
-      .addEnumConstant(
-        "B",
-        TypeSpec.anonymousClassBuilder()
-          .addSuperclassConstructorParameter("%L", 2)
-          .build()
-      )
-      .addProperty(
-        PropertySpec.builder("x", Int::class)
-          .initializer("x")
-          .build()
-      )
-      .addModifiers(INLINE)
-      .build()
-    assertThat(guacamole.toString()).isEqualTo(
-      """
-      |public enum inline class Foo(
-      |  public val x: kotlin.Int
-      |) {
-      |  A(1),
-      |  B(2),
-      |  ;
-      |}
-      |""".trimMargin()
     )
   }
 
@@ -5163,10 +4949,19 @@ class TypeSpecTest {
       .addType(
         TypeSpec.interfaceBuilder("Taco")
           .addProperty("foo", String::class, ABSTRACT)
+          .addProperty(
+            PropertySpec.builder("fooWithDefault", String::class)
+              .initializer("%S", "defaultValue")
+              .build()
+          )
           .addFunction(
             FunSpec.builder("bar")
               .addModifiers(ABSTRACT)
               .returns(String::class)
+              .build()
+          )
+          .addFunction(
+            FunSpec.builder("barWithDefault")
               .build()
           )
           .build()
@@ -5178,11 +4973,17 @@ class TypeSpecTest {
       package com.squareup.tacos
 
       import kotlin.String
+      import kotlin.Unit
 
       public interface Taco {
-        public abstract val foo: String
+        public val foo: String
 
-        public abstract fun bar(): String
+        public val fooWithDefault: String = "defaultValue"
+
+        public fun bar(): String
+
+        public fun barWithDefault(): Unit {
+        }
       }
 
       """.trimIndent()
@@ -5190,6 +4991,6 @@ class TypeSpecTest {
   }
 
   companion object {
-    private val donutsPackage = "com.squareup.donuts"
+    private const val donutsPackage = "com.squareup.donuts"
   }
 }
