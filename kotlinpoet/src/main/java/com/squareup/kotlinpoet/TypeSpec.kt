@@ -453,7 +453,7 @@ public class TypeSpec private constructor(
   }
 
   public class Builder internal constructor(
-    internal var kind: Kind,
+    public var kind: Kind, // Bootiy
     public val name: String?, // Bootify
     vararg modifiers: KModifier
   ) : Taggable.Builder<Builder>, OriginatingElementsHolder.Builder<Builder> {
