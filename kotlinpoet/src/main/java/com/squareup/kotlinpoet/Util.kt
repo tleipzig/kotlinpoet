@@ -97,8 +97,12 @@ internal fun stringLiteralWithQuotes(
         // Add a '|' after newlines. This pipe will be removed by trimMargin().
         result.append("\n|")
       } else if (c == '$' && escapeDollarSign) {
-        // Escape '$' symbols with ${'$'}.
-        result.append("\${\'\$\'}")
+        if (threeQuotes) {
+          // Escape '$' symbols with ${'$'}.
+          result.append("\${\'\$\'}")
+        } else {
+          result.append("\\\$")
+        }
       } else {
         result.append(c)
       }
@@ -128,7 +132,11 @@ internal fun stringLiteralWithQuotes(
       }
       // Trivial case: $ signs must be escaped.
       if (c == '$' && escapeDollarSign) {
-        result.append("\${\'\$\'}")
+        if (threeQuotes) {
+          result.append("\${\'\$\'}")
+        } else {
+          result.append("\\\$")
+        }
         continue
       }
       // Default case: just let character literal do its work.
