@@ -149,7 +149,7 @@ public class FileSpec private constructor(
     val imports = (importedTypeNames + importedMemberNames)
       .filterNot { it in memberImports.keys }
       // Bootify
-      .filterNot { it.startsWith("kotlin.") && !it.startsWith("kotlin.streams.") }
+      .filter { !it.startsWith("kotlin.") || it.startsWith("kotlin.streams.") || it.startsWith("kotlin.reflect.") }
       // Bootify - don't escape package names
       // .map { it.escapeSegmentsIfNecessary() }
       .plus(nonAliasedImports.map { it.toString() })

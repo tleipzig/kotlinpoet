@@ -198,6 +198,7 @@ public class AnnotationSpec private constructor(
             }
           }
           val member = CodeBlock.builder()
+          // reverted Bootify 23.07.21: swagger Parameter annotation "in = ..."
           member.add("%L = ", method.name)
           if (value.javaClass.isArray) {
             member.add("[⇥⇥")
@@ -236,6 +237,7 @@ public class AnnotationSpec private constructor(
         val member = CodeBlock.builder()
         val visitor = Visitor(member)
         val name = executableElement.simpleName.toString()
+        // reverted Bootify 23.07.21: swagger Parameter annotation "in = ..."
         member.add("%L = ", name)
         val value = annotation.elementValues[executableElement]!!
         value.accept(visitor, name)
