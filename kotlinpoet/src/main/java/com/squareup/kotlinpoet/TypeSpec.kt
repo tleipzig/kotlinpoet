@@ -244,11 +244,10 @@ public class TypeSpec private constructor(
         firstMember = false
       }
       if (isEnum) {
-        if (!firstMember) {
-          codeWriter.emit("\n")
-        }
         if (propertySpecs.isNotEmpty() || funSpecs.isNotEmpty() || typeSpecs.isNotEmpty()) {
           codeWriter.emit(";\n")
+        } else if (!firstMember) {
+          codeWriter.emit("\n")
         }
       }
 
