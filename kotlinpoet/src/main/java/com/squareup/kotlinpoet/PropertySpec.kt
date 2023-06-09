@@ -31,7 +31,8 @@ public class PropertySpec private constructor(
 ) : Taggable by tagMap, OriginatingElementsHolder by delegateOriginatingElementsHolder {
   public val mutable: Boolean = builder.mutable
   public val name: String = builder.name
-  public val type: TypeName = builder.type
+  // Bootify type nullable
+  public val type: TypeName? = builder.type
   public val kdoc: CodeBlock = builder.kdoc.build()
   public val annotations: List<AnnotationSpec> = builder.annotations.toImmutableList()
   public val modifiers: Set<KModifier> = builder.modifiers.toImmutableSet()
@@ -84,7 +85,12 @@ public class PropertySpec private constructor(
         codeWriter.emitCode("%T.", receiverType)
       }
     }
-    codeWriter.emitCode("%N: %T", this, type)
+    // Bootify nullable type support
+    if (type != null) {
+      codeWriter.emitCode("%N: %T", this, type)
+    } else {
+      codeWriter.emitCode("%N", this)
+    }
     if (withInitializer && initializer != null) {
       if (delegated) {
         codeWriter.emit(" by ")
@@ -144,7 +150,8 @@ public class PropertySpec private constructor(
   override fun toString(): String = buildCodeString { emit(this, emptySet()) }
 
   @JvmOverloads
-  public fun toBuilder(name: String = this.name, type: TypeName = this.type): Builder {
+  // Bootify type nullable
+  public fun toBuilder(name: String = this.name, type: TypeName? = this.type): Builder {
     val builder = Builder(name, type)
     builder.mutable = mutable
     builder.kdoc.add(kdoc)
@@ -163,7 +170,8 @@ public class PropertySpec private constructor(
 
   public class Builder internal constructor(
     internal val name: String,
-    internal val type: TypeName
+    // Bootify type nullable
+    internal val type: TypeName?
   ) : Taggable.Builder<Builder>,
     OriginatingElementsHolder.Builder<Builder> {
     internal var isPrimaryConstructorParameter = false
@@ -280,6 +288,15 @@ public class PropertySpec private constructor(
   }
 
   public companion object {
+
+    // Bootify builder without type
+    @JvmStatic public fun builder(
+      name: String,
+      vararg modifiers: KModifier
+    ): Builder {
+      return Builder(name, null).addModifiers(*modifiers)
+    }
+
     @JvmStatic public fun builder(
       name: String,
       type: TypeName,
