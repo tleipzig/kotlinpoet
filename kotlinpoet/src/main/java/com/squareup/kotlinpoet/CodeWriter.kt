@@ -287,6 +287,7 @@ internal class CodeWriter constructor(
           }
           if (!defer) typeName.emit(this)
           typeName.emitNullable(this)
+          typeName.emitAndAny(this)
         }
 
         "%M" -> {

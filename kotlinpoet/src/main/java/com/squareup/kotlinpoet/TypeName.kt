@@ -17,6 +17,7 @@
 
 package com.squareup.kotlinpoet
 
+import com.squareup.kotlinpoet.Dynamic.andAny
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import java.lang.reflect.GenericArrayType
 import java.lang.reflect.Modifier.isStatic
@@ -69,10 +70,13 @@ import kotlin.reflect.typeOf
  */
 public sealed class TypeName constructor(
   public val isNullable: Boolean,
+  // Bootify
+  public val andAny: Boolean,
   annotations: List<AnnotationSpec>,
   internal val tagMap: TagMap
 ) : Taggable by tagMap {
   public val annotations: List<AnnotationSpec> = annotations.toImmutableList()
+
 
   /** Lazily-initialized toString of this type name.  */
   private val cachedString: String by lazy {
@@ -80,18 +84,21 @@ public sealed class TypeName constructor(
       emitAnnotations(this)
       emit(this)
       if (isNullable) emit("?")
+      if (andAny) emit(" & Any")
     }
   }
 
   public fun copy(
     nullable: Boolean = this.isNullable,
+    andAny: Boolean = this.andAny,
     annotations: List<AnnotationSpec> = this.annotations.toList()
   ): TypeName {
-    return copy(nullable, annotations, this.tags)
+    return copy(nullable, andAny, annotations, this.tags)
   }
 
   public abstract fun copy(
     nullable: Boolean = this.isNullable,
+    andAny: Boolean = this.andAny,
     annotations: List<AnnotationSpec> = this.annotations.toList(),
     tags: Map<KClass<*>, Any> = this.tags
   ): TypeName
@@ -121,6 +128,12 @@ public sealed class TypeName constructor(
   internal fun emitNullable(out: CodeWriter) {
     if (isNullable) {
       out.emit("?")
+    }
+  }
+
+  internal fun emitAndAny(out: CodeWriter) {
+    if (andAny) {
+      out.emit(" & Any")
     }
   }
 
@@ -303,9 +316,10 @@ public inline fun <reified T> typeNameOf(): TypeName = typeOf<T>().asTypeName()
 public class ClassName internal constructor(
   names: List<String>,
   nullable: Boolean = false,
+  andAny: Boolean = false,
   annotations: List<AnnotationSpec> = emptyList(),
   tags: Map<KClass<*>, Any> = emptyMap()
-) : TypeName(nullable, annotations, TagMap(tags)), Comparable<ClassName> {
+) : TypeName(nullable, andAny, annotations, TagMap(tags)), Comparable<ClassName> {
   /**
    * Returns a class name created from the given parts. For example, calling this with package name
    * `"java.util"` and simple names `"Map"`, `"Entry"` yields `Map.Entry`.
@@ -360,10 +374,11 @@ public class ClassName internal constructor(
 
   override fun copy(
     nullable: Boolean,
+    andAny: Boolean,
     annotations: List<AnnotationSpec>,
     tags: Map<KClass<*>, Any>
   ): ClassName {
-    return ClassName(names, nullable, annotations, tags)
+    return ClassName(names, nullable, andAny, annotations, tags)
   }
 
   /**
@@ -482,10 +497,11 @@ public class ClassName internal constructor(
   }
 }
 
-public object Dynamic : TypeName(false, emptyList(), TagMap(emptyMap())) {
+public object Dynamic : TypeName(false, false, emptyList(), TagMap(emptyMap())) {
 
   override fun copy(
     nullable: Boolean,
+    andAny: Boolean,
     annotations: List<AnnotationSpec>,
     tags: Map<KClass<*>, Any>
   ): Nothing = throw UnsupportedOperationException("dynamic doesn't support copying")
@@ -503,7 +519,7 @@ public class LambdaTypeName private constructor(
   public val isSuspending: Boolean = false,
   annotations: List<AnnotationSpec> = emptyList(),
   tags: Map<KClass<*>, Any> = emptyMap()
-) : TypeName(nullable, annotations, TagMap(tags)) {
+) : TypeName(nullable, false, annotations, TagMap(tags)) {
   public val parameters: List<ParameterSpec> = parameters.toImmutableList()
 
   init {
@@ -516,14 +532,16 @@ public class LambdaTypeName private constructor(
 
   override fun copy(
     nullable: Boolean,
+    andAny: Boolean,
     annotations: List<AnnotationSpec>,
     tags: Map<KClass<*>, Any>
   ): LambdaTypeName {
-    return copy(nullable, annotations, this.isSuspending, tags)
+    return copy(nullable, andAny, annotations, this.isSuspending, tags)
   }
 
   public fun copy(
     nullable: Boolean = this.isNullable,
+    andAny: Boolean = this.andAny,
     annotations: List<AnnotationSpec> = this.annotations.toList(),
     suspending: Boolean = this.isSuspending,
     tags: Map<KClass<*>, Any> = this.tags.toMap()
@@ -592,9 +610,10 @@ public class ParameterizedTypeName internal constructor(
   public val rawType: ClassName,
   typeArguments: List<TypeName>,
   nullable: Boolean = false,
+  andAny: Boolean = false,
   annotations: List<AnnotationSpec> = emptyList(),
   tags: Map<KClass<*>, Any> = emptyMap()
-) : TypeName(nullable, annotations, TagMap(tags)) {
+) : TypeName(nullable, andAny, annotations, TagMap(tags)) {
   public val typeArguments: List<TypeName> = typeArguments.toImmutableList()
 
   init {
@@ -605,15 +624,16 @@ public class ParameterizedTypeName internal constructor(
 
   override fun copy(
     nullable: Boolean,
+    andAny: Boolean,
     annotations: List<AnnotationSpec>,
     tags: Map<KClass<*>, Any>
   ): ParameterizedTypeName {
-    return ParameterizedTypeName(enclosingType, rawType, typeArguments, nullable, annotations, tags)
+    return ParameterizedTypeName(enclosingType, rawType, typeArguments, nullable, andAny, annotations, tags)
   }
 
   public fun plusParameter(typeArgument: TypeName): ParameterizedTypeName =
     ParameterizedTypeName(
-      enclosingType, rawType, typeArguments + typeArgument, isNullable,
+      enclosingType, rawType, typeArguments + typeArgument, isNullable, andAny,
       annotations
     )
 
@@ -639,6 +659,7 @@ public class ParameterizedTypeName internal constructor(
         parameter.emitAnnotations(out)
         parameter.emit(out)
         parameter.emitNullable(out)
+        parameter.emitAndAny(out)
       }
       out.emit(">")
     }
@@ -748,6 +769,7 @@ public class ParameterizedTypeName internal constructor(
           }
         },
         nullable,
+        andAny,
         effectiveType.annotations.map { AnnotationSpec.get(it) }
       )
     }
@@ -762,27 +784,30 @@ public class TypeVariableName private constructor(
   public val variance: KModifier? = null,
   public val isReified: Boolean = false,
   nullable: Boolean = false,
+  andAny: Boolean = false,
   annotations: List<AnnotationSpec> = emptyList(),
   tags: Map<KClass<*>, Any> = emptyMap()
-) : TypeName(nullable, annotations, TagMap(tags)) {
+) : TypeName(nullable, andAny, annotations, TagMap(tags)) {
 
   override fun copy(
     nullable: Boolean,
+    andAny: Boolean,
     annotations: List<AnnotationSpec>,
     tags: Map<KClass<*>, Any>
   ): TypeVariableName {
-    return copy(nullable, annotations, this.bounds, this.isReified, tags)
+    return copy(nullable, andAny, annotations, this.bounds, this.isReified, tags)
   }
 
   public fun copy(
     nullable: Boolean = this.isNullable,
+    andAny: Boolean = this.andAny,
     annotations: List<AnnotationSpec> = this.annotations.toList(),
     bounds: List<TypeName> = this.bounds.toList(),
     reified: Boolean = this.isReified,
     tags: Map<KClass<*>, Any> = this.tagMap.tags
   ): TypeVariableName {
     return TypeVariableName(
-      name, bounds.withoutImplicitBound(), variance, reified, nullable,
+      name, bounds.withoutImplicitBound(), variance, reified, nullable, andAny,
       annotations, tags
     )
   }
@@ -952,9 +977,10 @@ public class WildcardTypeName private constructor(
   outTypes: List<TypeName>,
   inTypes: List<TypeName>,
   nullable: Boolean = false,
+  andAny: Boolean = false,
   annotations: List<AnnotationSpec> = emptyList(),
   tags: Map<KClass<*>, Any> = emptyMap()
-) : TypeName(nullable, annotations, TagMap(tags)) {
+) : TypeName(nullable, andAny, annotations, TagMap(tags)) {
   public val outTypes: List<TypeName> = outTypes.toImmutableList()
   public val inTypes: List<TypeName> = inTypes.toImmutableList()
 
@@ -964,10 +990,11 @@ public class WildcardTypeName private constructor(
 
   override fun copy(
     nullable: Boolean,
+    andAny: Boolean,
     annotations: List<AnnotationSpec>,
     tags: Map<KClass<*>, Any>
   ): WildcardTypeName {
-    return WildcardTypeName(outTypes, inTypes, nullable, annotations, tags)
+    return WildcardTypeName(outTypes, inTypes, nullable, andAny, annotations, tags)
   }
 
   override fun emit(out: CodeWriter): CodeWriter {
