@@ -49,6 +49,7 @@ public class FileSpec private constructor(
 ) : Taggable by tagMap {
   public val annotations: List<AnnotationSpec> = builder.annotations.toImmutableList()
   public val comment: CodeBlock = builder.comment.build()
+  public val rawImports: CodeBlock = builder.rawImports.build()
   public val packageName: String = builder.packageName
   public val name: String = builder.name
   public val members: List<Any> = builder.members.toList()
@@ -161,6 +162,9 @@ public class FileSpec private constructor(
         codeWriter.emitCode("import·%L", import)
         codeWriter.emit("\n")
       }
+    }
+    codeWriter.emitCode(rawImports)
+    if (imports.isNotEmpty() || rawImports.isNotEmpty()) {
       codeWriter.emit("\n")
     }
 
@@ -216,6 +220,7 @@ public class FileSpec private constructor(
     val builder = Builder(packageName, name)
     builder.annotations.addAll(annotations)
     builder.comment.add(comment)
+    builder.rawImports.add(rawImports)
     builder.members.addAll(this.members)
     builder.indent = indent
     builder.memberImports.addAll(memberImports.values)
@@ -228,9 +233,21 @@ public class FileSpec private constructor(
     public val name: String
   ) : Taggable.Builder<Builder> {
     internal val comment = CodeBlock.builder()
+    internal val rawImports = CodeBlock.builder()
     internal val memberImports = sortedSetOf<Import>()
     internal var indent = DEFAULT_INDENT
     override val tags: MutableMap<KClass<*>, Any> = mutableMapOf()
+
+    /**
+     * Appends literal import declarations after the generated imports. No syntax checking or
+     * import resolution is performed. A missing trailing newline is added.
+     */
+    public fun addRawImports(imports: String): Builder = apply {
+      if (imports.isNotEmpty()) {
+        rawImports.add("%L", imports)
+        if (!imports.endsWith("\n")) rawImports.add("\n")
+      }
+    }
 
     public val imports: List<Import> get() = memberImports.toList()
     public val members: MutableList<Any> = mutableListOf()

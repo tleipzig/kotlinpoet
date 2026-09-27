@@ -67,6 +67,7 @@ public class TypeSpec private constructor(
   public val enumConstants: Map<String, TypeSpec> = builder.enumConstants.toImmutableMap()
   public val propertySpecs: List<PropertySpec> = builder.propertySpecs.toImmutableList()
   public val initializerBlock: CodeBlock = builder.initializerBlock.build()
+  public val rawMembers: CodeBlock = builder.rawMembers.build()
   public val initializerIndex: Int = builder.initializerIndex
   public val funSpecs: List<FunSpec> = builder.funSpecs.toImmutableList()
   public val typeSpecs: List<TypeSpec> = builder.typeSpecs.toImmutableList()
@@ -86,6 +87,7 @@ public class TypeSpec private constructor(
     builder.funSpecs += funSpecs
     builder.typeSpecs += typeSpecs
     builder.initializerBlock.add(initializerBlock)
+    builder.rawMembers.add(rawMembers)
     builder.initializerIndex = initializerIndex
     builder.superinterfaces.putAll(superinterfaces)
     builder.primaryConstructor = primaryConstructor
@@ -244,7 +246,7 @@ public class TypeSpec private constructor(
         firstMember = false
       }
       if (isEnum) {
-        if (propertySpecs.isNotEmpty() || funSpecs.isNotEmpty() || typeSpecs.isNotEmpty()) {
+        if (propertySpecs.isNotEmpty() || funSpecs.isNotEmpty() || typeSpecs.isNotEmpty() || rawMembers.isNotEmpty()) {
           codeWriter.emit(";\n")
         } else if (!firstMember) {
           codeWriter.emit("\n")
@@ -308,6 +310,11 @@ public class TypeSpec private constructor(
         if (!firstMember) codeWriter.emit("\n")
         typeSpec.emit(codeWriter, null, kind.implicitTypeModifiers(modifiers + implicitModifiers), isNestedExternal = areNestedExternal)
         firstMember = false
+      }
+
+      if (rawMembers.isNotEmpty()) {
+        if (!firstMember) codeWriter.emit("\n")
+        codeWriter.emitCode(rawMembers)
       }
 
       codeWriter.unindent()
@@ -402,7 +409,8 @@ public class TypeSpec private constructor(
         initializerBlock.isEmpty() &&
         (primaryConstructor?.body?.isEmpty() ?: true) &&
         funSpecs.isEmpty() &&
-        typeSpecs.isEmpty()
+        typeSpecs.isEmpty() &&
+        rawMembers.isEmpty()
     }
 
   override fun equals(other: Any?): Boolean {
@@ -462,6 +470,7 @@ public class TypeSpec private constructor(
     internal var primaryConstructor: FunSpec? = null
     internal var superclass: TypeName = ANY
     internal val initializerBlock = CodeBlock.builder()
+    internal val rawMembers = CodeBlock.builder()
     public var initializerIndex: Int = -1
     internal val isAnonymousClass get() = name == null && kind == Kind.CLASS
     internal val isExternal get() = EXTERNAL in modifiers
@@ -484,6 +493,18 @@ public class TypeSpec private constructor(
     public val propertySpecs: MutableList<PropertySpec> = mutableListOf()
     public val funSpecs: MutableList<FunSpec> = mutableListOf()
     public val typeSpecs: MutableList<TypeSpec> = mutableListOf()
+
+    /**
+     * Appends literal members after all generated members, inside the type's closing brace.
+     * The type indentation is applied; relative indentation must be supplied by the caller.
+     * No syntax checking or import resolution is performed. A missing trailing newline is added.
+     */
+    public fun addRawMembers(members: String): Builder = apply {
+      if (members.isNotEmpty()) {
+        rawMembers.add("%L", members)
+        if (!members.endsWith("\n")) rawMembers.add("\n")
+      }
+    }
 
     public fun addKdoc(format: String, vararg args: Any): Builder = apply {
       kdoc.add(format, *args)
